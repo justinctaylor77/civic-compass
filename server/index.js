@@ -78,6 +78,6 @@ app.get('/api/news', wrap(async (req, res) => {
 }));
 
 const pub = path.join(__dirname, '..', 'public');
-app.use(express.static(pub, { setHeaders: (res, p) => { if (p.endsWith('sw.js') || p.endsWith('.html') || p.endsWith('.webmanifest')) res.set('Cache-Control', 'no-cache'); } }));
+app.use(express.static(pub, { setHeaders: (res, p) => { if (p.endsWith('sw.js') || p.endsWith('.html') || p.endsWith('.webmanifest')) res.set('Cache-Control', 'no-cache'); else if (p.includes('/img/hero/')) res.set('Cache-Control', 'public, max-age=31536000, immutable'); } }));
 app.get(/^\/(?!api\/).*/, (req, res) => res.sendFile(path.join(pub, 'index.html')));
 app.listen(PORT, '0.0.0.0', () => console.log(`Civic Compass listening on 0.0.0.0:${PORT}`));
