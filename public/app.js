@@ -14,57 +14,69 @@ const fmtDateTime = (d) => { try { return new Date(d).toLocaleString('en-US', { 
 const STAR = (size = 40, id = 'a') => `<svg viewBox="0 0 100 100" width="${size}" height="${size}" aria-hidden="true" focusable="false"><path d="M50 3 58 41 97 50 58 59 50 97 42 59 3 50 42 41Z" fill="#fff"/><path d="M50 3 42 41 3 50 50 50Z" fill="#B1001D"/><path d="M97 50 58 41 50 50 58 59Z" fill="#B1001D" opacity=".0"/><path d="M50 50 58 41 97 50Z" fill="#EE1F2E"/><path d="M50 97 58 59 50 50Z" fill="#dfe3ee"/><path d="M50 50 42 59 50 97Z" fill="#fff"/><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="0"/></svg>`;
 const COMPASS = (size = 96) => `<svg class="spin" viewBox="0 0 100 100" width="${size}" height="${size}" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#011A42" stroke="#fff" stroke-width="3"/><path d="${(() => { let d = ''; for (let i = 0; i < 36; i++) { const a = (i / 36) * 2 * Math.PI, l = i % 9 === 0 ? 9 : 4; d += `M${(50 + (44 - l) * Math.sin(a)).toFixed(1)} ${(50 - (44 - l) * Math.cos(a)).toFixed(1)}L${(50 + 44 * Math.sin(a)).toFixed(1)} ${(50 - 44 * Math.cos(a)).toFixed(1)}`; } return d; })()}" stroke="#fff" stroke-width="1.6" opacity=".8"/><g class="needle"><path d="M50 14 58 50 50 50Z" fill="#EE1F2E"/><path d="M50 14 42 50 50 50Z" fill="#B1001D"/><path d="M50 86 58 50 50 50Z" fill="#dfe5f3"/><path d="M50 86 42 50 50 50Z" fill="#fff"/></g><circle cx="50" cy="50" r="3.5" fill="#011A42" stroke="#fff" stroke-width="1.5"/></svg>`;
 const DIVIDER = `<div class="divider" role="presentation"><span class="dv-star">${STAR(30)}</span></div>`;
-/* v2 flag: flat, geometric, orienteering-map flavored. Same palette as the logo. */
 const star5 = (cx, cy, r) => { const p = []; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + (i * Math.PI) / 5, rr = i % 2 ? r * 0.4 : r; p.push((cx + rr * Math.cos(a)).toFixed(1) + ',' + (cy + rr * Math.sin(a)).toFixed(1)); } return p.join(' '); };
 const spark = (cx, cy, r, fill = '#fff') => `<path d="M${cx} ${cy - r}Q${cx} ${cy} ${cx + r} ${cy}Q${cx} ${cy} ${cx} ${cy + r}Q${cx} ${cy} ${cx - r} ${cy}Q${cx} ${cy} ${cx} ${cy - r}Z" fill="${fill}"/>`;
 function ticks(cx, cy, r, n, len, major, majLen, stroke, w) {
   let d = ''; for (let i = 0; i < n; i++) { const a = (i / n) * 2 * Math.PI, l = i % major === 0 ? majLen : len; d += `M${(cx + (r - l) * Math.sin(a)).toFixed(1)} ${(cy - (r - l) * Math.cos(a)).toFixed(1)}L${(cx + r * Math.sin(a)).toFixed(1)} ${(cy - r * Math.cos(a)).toFixed(1)}`; }
   return `<path d="${d}" stroke="${stroke}" stroke-width="${w}" fill="none" stroke-linecap="round"/>`;
 }
+/* v3 flag: clean stars and stripes, bent into a smooth sine wave (a gentle breeze).
+   Geometry is warped by y' = y + A*env(x)*sin(2*pi*x/L - phase). The animation is SVG SMIL (no per-frame JS):
+   stripes/canton morph between 8 phase keyframes, each star column glides with the wave, and the fold shading slides one wavelength per loop. */
+const FLAG = { W: 520, H: 274, A: 13, L: 300, N: 8, T: 7 };
 function flagSVG() {
-  const W = 520, H = 286, sh = H / 13, cw = 216, ch = sh * 7, ox = 14, oy = 26;
-  let s = `<svg viewBox="0 0 ${W + 60} ${H + 96}" role="img" aria-label="United States flag, drawn as an orienteering map with a compass rose in the field of stars"><defs>
-  <clipPath id="fc"><rect x="${ox}" y="${oy}" width="${W}" height="${H}" rx="10"/></clipPath>
-  <clipPath id="cc"><rect x="${ox}" y="${oy}" width="${cw}" height="${ch}"/></clipPath>
-  <linearGradient id="rb1" x1="0" x2="1"><stop offset="0" stop-color="#B1001D"/><stop offset=".6" stop-color="#EE1F2E"/><stop offset="1" stop-color="#B1001D" stop-opacity="0"/></linearGradient>
-  <linearGradient id="rb2" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".7" stop-color="#dfe5f3"/><stop offset="1" stop-color="#dfe5f3" stop-opacity="0"/></linearGradient>
+  const { W, H, A, L, N, T } = FLAG, sh = H / 13, cw = W * 0.4, ch = sh * 7, TAU = 2 * Math.PI;
+  const f1 = (n) => +n.toFixed(1);
+  const wave = (x, k) => A * Math.pow(x / W, 0.8) * Math.sin((TAU * x) / L - (TAU * k) / N);
+  const xs = []; for (let x = 0; x < W; x += 20) xs.push(x); xs.push(W);
+  const cxs = [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, cw];
+  const poly = (y0, y1, k, narrow) => { const px = narrow ? cxs : xs; const top = px.map((x) => [x, y0 + wave(x, k)]), bot = px.map((x) => [x, y1 + wave(x, k)]).reverse(); return 'M' + top.concat(bot).map((p) => f1(p[0]) + ' ' + f1(p[1])).join('L') + 'Z'; };
+  const frames = (y0, y1, narrow) => Array.from({ length: N + 1 }, (_, k) => poly(y0, y1, k % N, narrow));
+  const anim = (vals) => `<animate attributeName="d" dur="${T}s" repeatCount="indefinite" values="${vals.join(';')}"/>`;
+  const shape = (y0, y1, fill, narrow, extra = '') => { const v = frames(y0, y1, narrow); return `<path d="${v[0]}" fill="${fill}" ${extra}>${anim(v)}</path>`; };
+  // fold shading: dark on the slope turning away, light on the slope catching the sun; one wavelength wide, repeating
+  let st = ''; for (let i = 0; i <= 24; i++) { const u = i / 24, c = Math.cos(TAU * u + 0.6); const col = c > 0 ? '#001435' : '#ffffff'; st += `<stop offset="${f1(u * 100) / 100}" stop-color="${col}" stop-opacity="${(Math.abs(c) * (c > 0 ? 0.2 : 0.2)).toFixed(3)}"/>`; }
+  let s = `<svg class="flag" viewBox="-26 -36 ${W + 46} ${H + 82}" role="img" aria-label="Waving United States flag with 50 stars and 13 stripes, on a pole topped with a compass star"><defs>
+  <linearGradient id="fold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="${L}" y2="0" spreadMethod="repeat">${st}<animateTransform attributeName="gradientTransform" type="translate" dur="${T}s" repeatCount="indefinite" values="0 0;${L} 0"/></linearGradient>
   </defs>`;
-  // ruler along the top edge (bearing ticks) + north marker
-  let rul = ''; for (let x = 0; x <= W; x += 10) rul += `M${ox + x} ${oy - 7}v${x % 50 === 0 ? 7 : 4}`;
-  s += `<path d="${rul}" stroke="#9db8ee" stroke-width="1.6" fill="none" opacity=".75"/>`;
-  s += `<text x="${ox + cw / 2}" y="${oy - 12}" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="12" fill="#fff" opacity=".85">N</text>`;
-  // pole with a compass-star finial
-  s += `<rect x="${ox - 9}" y="${oy - 8}" width="5" height="${H + 70}" rx="2.5" fill="#dfe5f3"/>${spark(ox - 6.5, oy - 14, 11)}`;
-  // flat shadow
-  s += `<rect x="${ox + 8}" y="${oy + 10}" width="${W}" height="${H}" rx="10" fill="#000" opacity=".28"/>`;
-  s += `<g clip-path="url(#fc)">`;
-  for (let i = 0; i < 13; i++) s += `<rect x="${ox}" y="${(oy + i * sh).toFixed(1)}" width="${W}" height="${(sh + 0.4).toFixed(1)}" fill="${i % 2 ? '#FBFBFB' : '#B1001D'}"/>`;
-  // faint contour lines over the stripes (map feel)
-  s += `<g fill="none" stroke="#011A42" stroke-opacity=".10" stroke-width="1.2">`;
-  for (let k = 0; k < 5; k++) s += `<path d="M${ox + cw + 10} ${oy + H - 30 - k * 14}C${ox + 300} ${oy + H - 70 - k * 22} ${ox + 380} ${oy + H + 10 - k * 14} ${ox + W} ${oy + H - 60 - k * 18}"/>`;
-  s += `</g></g>`;
+  // pole + compass-star topper (same four-point star as the logo's sparkles); pole is static, the flag is pinned to it
+  s += `<rect x="-8.5" y="-14" width="5" height="${H + 62}" rx="2.5" fill="#dfe5f3"/><rect x="-7" y="-14" width="1.6" height="${H + 62}" rx=".8" fill="#fff" opacity=".8"/>`;
+  s += spark(-6, -22, 13);
+  // soft drop shadow: the flag outline, offset
+  const outV = frames(0, H, false);
+  s += `<path d="${outV[0]}" fill="#000" opacity=".26" transform="translate(9 13)">${anim(outV)}</path>`;
+  // stripes: red field, then six white stripes
+  s += shape(0, H, '#B1001D', false);
+  for (let i = 1; i < 13; i += 2) s += shape(i * sh, (i + 1) * sh + 0.4, '#FBFBFB', false);
   // canton
-  s += `<g clip-path="url(#fc)"><rect x="${ox}" y="${oy}" width="${cw}" height="${ch.toFixed(1)}" fill="#011A42"/></g>`;
-  const cx = ox + cw / 2, cy = oy + ch / 2;
-  s += `<g clip-path="url(#cc)">`;
-  s += `<g stroke="#fff" stroke-opacity=".10" stroke-width="1">`; for (let x = ox + 36; x < ox + cw; x += 36) s += `<path d="M${x} ${oy}v${ch}"/>`; for (let y = oy + 36; y < oy + ch; y += 36) s += `<path d="M${ox} ${y}h${cw}"/>`; s += `</g>`;
-  s += `<g fill="none" stroke="#9db8ee" stroke-opacity=".28" stroke-width="1.1">`; for (let k = 0; k < 5; k++) { const r = 20 + k * 17; s += `<path d="M${cx - r * 1.25} ${cy + 4}C${cx - r} ${cy - r * 1.05} ${cx + r * 0.2} ${cy - r * 1.2} ${cx + r * 1.2} ${cy - 6}C${cx + r * 1.1} ${cy + r} ${cx - r * 0.3} ${cy + r * 1.1} ${cx - r * 1.25} ${cy + 4}Z"/>`; } s += `</g>`;
-  // compass rose behind the stars
-  s += `<circle cx="${cx}" cy="${cy}" r="${(ch / 2 - 5).toFixed(1)}" fill="none" stroke="#9db8ee" stroke-opacity=".35" stroke-width="1.2"/>`;
-  s += ticks(cx, cy, ch / 2 - 5, 72, 2.5, 9, 5, 'rgba(157,184,238,.45)', 1);
-  const R = ch / 2 + 6;
-  s += `<path d="M${cx} ${cy - R}L${cx + 9} ${cy - 9}L${cx + R * 1.5} ${cy}L${cx + 9} ${cy + 9}L${cx} ${cy + R}L${cx - 9} ${cy + 9}L${cx - R * 1.5} ${cy}L${cx - 9} ${cy - 9}Z" fill="#9db8ee" fill-opacity=".13"/>`;
-  s += `</g>`;
-  // 50 stars, standard staggered 6/5 x 9 layout
-  const gx = cw / 12, gy = ch / 10;
-  for (let r = 0; r < 9; r++) { const n = r % 2 ? 5 : 6; for (let c = 0; c < n; c++) s += `<polygon points="${star5(ox + (r % 2 ? 2 : 1) * gx + c * 2 * gx, oy + (r + 1) * gy, 6.4)}" fill="#fff"/>`; }
-  // ribbon swoosh (as in the logo) sweeping under the flag
-  const bx = ox - 4, by = oy + H - 6;
-  s += `<path d="M${bx} ${by + 34}C${bx + 150} ${by + 70} ${bx + 330} ${by - 20} ${bx + W + 20} ${by + 6}C${bx + 360} ${by + 22} ${bx + 170} ${by + 100} ${bx} ${by + 34}Z" fill="url(#rb1)"/>`;
-  s += `<path d="M${bx + 10} ${by + 46}C${bx + 170} ${by + 100} ${bx + 360} ${by + 14} ${bx + W} ${by + 22}C${bx + 380} ${by + 34} ${bx + 190} ${by + 82} ${bx + 10} ${by + 46}Z" fill="url(#rb2)" opacity=".9"/>`;
-  s += `<rect x="${ox}" y="${oy}" width="${W}" height="${H}" rx="10" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>`;
+  s += shape(0, ch, '#011A42', true);
+  // 50 stars (9 rows of 6/5), one group per column so each column rides the wave exactly
+  const gx = cw / 12, gy = ch / 10, cols = new Map();
+  for (let r = 0; r < 9; r++) { const n = r % 2 ? 5 : 6; for (let c = 0; c < n; c++) { const x = (r % 2 ? 2 : 1) * gx + c * 2 * gx; (cols.get(x) || cols.set(x, []).get(x)).push(star5(x, (r + 1) * gy, 6.8)); } }
+  for (const [x, stars] of cols) { const v = Array.from({ length: N + 1 }, (_, k) => '0 ' + f1(wave(x, k % N))); s += `<g fill="#fff"><animateTransform attributeName="transform" type="translate" dur="${T}s" repeatCount="indefinite" values="${v.join(';')}"/>${stars.map((p) => `<polygon points="${p}"/>`).join('')}</g>`; }
+  // fold highlights over the whole flag
+  s += `<path d="${outV[0]}" fill="url(#fold)">${anim(outV)}</path>`;
   s += `</svg>`;
   return s;
+}
+/* motion control: honors prefers-reduced-motion (paused by default), pauses off-screen / hidden tab, and has a visible pause/play button (WCAG 2.2.2) */
+const reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+function setupFlagMotion() {
+  const svg = document.querySelector('svg.flag'), btn = document.getElementById('flagpause');
+  if (!svg) return;
+  let visible = true;
+  const pref = () => localStorage.getItem('cc-flag-motion'); // 'on' | 'off' | null (follow the system setting)
+  const paused = () => (pref() ? pref() === 'off' : reduceMq.matches);
+  const apply = () => {
+    const off = paused() || !visible || document.hidden;
+    try { off ? svg.pauseAnimations() : svg.unpauseAnimations(); } catch (e) {}
+    if (btn) { btn.textContent = paused() ? 'Play flag motion' : 'Pause flag motion'; btn.hidden = false; }
+  };
+  if (btn) btn.onclick = () => { localStorage.setItem('cc-flag-motion', paused() ? 'on' : 'off'); apply(); };
+  if ('IntersectionObserver' in window) new IntersectionObserver((e) => { visible = e[0].isIntersecting; apply(); }).observe(svg);
+  document.addEventListener('visibilitychange', apply);
+  if (reduceMq.addEventListener) reduceMq.addEventListener('change', () => { localStorage.removeItem('cc-flag-motion'); apply(); });
+  apply();
 }
 const WAVE = `<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 52C260 4 470 98 760 48 1040 2 1200 52 1440 18V90H0Z" fill="#B1001D"/><path d="M0 62C270 16 480 100 770 62 1050 24 1210 70 1440 38V90H0Z" fill="#FBFBFB"/><path d="M0 74C280 38 500 102 790 78 1060 56 1220 86 1440 62V90H0Z" fill="#F4F6FB"/></svg>`;
 const RING = (() => { const c = 100; let s = `<svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="${c}" cy="${c}" r="94" fill="none" stroke="#fff" stroke-width="3"/><circle cx="${c}" cy="${c}" r="74" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="2 4"/>`; s += ticks(c, c, 94, 72, 5, 9, 12, '#fff', 1.6); s += `<path d="M100 22 107 93 178 100 107 107 100 178 93 107 22 100 93 93Z" fill="#fff"/>`; return s + `<text x="100" y="17" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="11" fill="#fff">N</text></svg>`; })();
@@ -116,7 +128,7 @@ function homeView() {
       </form>
       ${d >= 0 ? `<div class="countdown"><b>${d}</b> <span>${d === 0 ? 'It is Election Day!' : d === 1 ? 'day until Election Day' : 'days until Election Day'}</span></div>` : ''}
     </div>
-    <div class="hero-flag">${RING}${flagSVG()}</div>
+    <div class="hero-flag">${RING}${flagSVG()}<button type="button" class="flag-pause" id="flagpause" hidden>Pause flag motion</button></div>
   </div>${WAVE}</section>
   <section class="promises" aria-label="Our promises">
     <div class="promise">${ICON.scale}<h3>No opinions</h3><p>We never tell you how to vote or who is best.</p></div>
@@ -128,6 +140,7 @@ function homeView() {
   <div class="prose"><h2>How it works</h2><ol><li>Type your ZIP code, city, or address above.</li><li>See your races in four parts: <b>City, County, State and Federal</b>.</li><li>Tap any candidate to read their background, positions, campaign money and news.</li></ol>
   <p class="src">Not sure where to vote? Visit ${link('https://vote.org/polling-place-locator/', 'Vote.org’s polling place locator')}.</p></div></div>`;
   footer();
+  setupFlagMotion();
   $('#f').addEventListener('submit', (e) => { e.preventDefault(); const q = $('#q').value.trim(); if (q) location.hash = '#/ballot?q=' + encodeURIComponent(q); });
   main.focus({ preventScroll: true });
 }
