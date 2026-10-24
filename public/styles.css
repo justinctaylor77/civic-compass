@@ -57,12 +57,11 @@ img{max-width:100%}
 .hero p.lead{font-size:1.2rem;color:#e3eafb;max-width:34rem;margin:0 0 1.3rem}
 .countdown{display:inline-flex;align-items:baseline;gap:.5rem;margin-top:1rem;font-weight:700}
 .countdown b{font:800 2.4rem Montserrat,sans-serif;color:#fff}
-.hero-flag{position:relative}
-.hero-flag svg.flag{width:100%;height:auto;position:relative;display:block;overflow:visible}
+.hero-art{position:relative;margin:0 -.6rem 0 -1.4rem}
+.hero-art svg.capitol{width:100%;height:auto;position:relative;display:block;overflow:visible}
 .flag-pause{position:relative;display:block;margin:.2rem 0 0 auto;font:700 .85rem Montserrat,sans-serif;color:#fff;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:.35rem .9rem;min-height:2.4rem;cursor:pointer}
 .flag-pause:hover{background:#fff;color:var(--navy)}
 .flag-pause[hidden]{display:none}
-.ring{position:absolute;right:-70px;top:-90px;width:430px;opacity:.11;pointer-events:none}
 .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:90px;display:block}
 .search{background:#fff;color:var(--ink);border-radius:var(--r);padding:1.1rem;box-shadow:var(--shadow);max-width:36rem}
 .search label{display:block;font:800 1.15rem Montserrat,sans-serif;margin-bottom:.5rem;color:var(--navy)}
@@ -207,7 +206,7 @@ table.fin th{background:var(--paper);color:var(--navy);font-family:Montserrat,sa
 /* ---------- responsive ---------- */
 @media (max-width:860px){
   .hero-inner{grid-template-columns:1fr;padding-bottom:5rem}
-  .hero-flag{max-width:340px;margin:.5rem auto 0}
+  .hero-art{max-width:380px;margin:.5rem auto 0}
   .promises{grid-template-columns:1fr 1fr}
   .news3{grid-template-columns:1fr}
 }

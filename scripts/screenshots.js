@@ -28,6 +28,7 @@ const PAGES = [
       if (sel && !full) await p.locator(sel).first().screenshot({ path: path.join(OUT, `${vn}-${name}.png`) });
       else await p.screenshot({ path: path.join(OUT, `${vn}-${name}.png`), fullPage: false });
       if (name === '05-candidate-mcadams' || name === '02-ballot-84101-top') await p.screenshot({ path: path.join(OUT, `${vn}-${name}-fullpage.png`), fullPage: true });
+      if (name === '01-home') { await p.locator('.hero-art').screenshot({ path: path.join(OUT, `${vn}-01-home-hero-closeup.png`) }); await p.screenshot({ path: path.join(OUT, `${vn}-01-home-fullpage.png`), fullPage: true }); }
       console.log('shot', vn, name);
     }
     await ctx.close();
