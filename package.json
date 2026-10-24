@@ -1,0 +1,24 @@
+{
+  "name": "civic-compass",
+  "version": "1.0.0",
+  "description": "Civic Compass — free, nonpartisan voter research for the Nov 3, 2026 U.S. midterms",
+  "scripts": {
+    "start": "node server/index.js",
+    "snapshot": "node scripts/snapshot-ballotpedia.js",
+    "screenshots": "node scripts/screenshots.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "compression": "^1.8.2",
+    "express": "^5.3.0",
+    "rss-parser": "^3.13.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}

@@ -1,0 +1,1706 @@
+{
+"source": "AllSides Media Bias Ratings via open dataset favstats/AllSideR (GitHub)",
+"sourceUrl": "https://www.allsides.com/media-bias/ratings",
+"datasetUrl": "https://github.com/favstats/AllSideR",
+"note": "Snapshot of AllSides ratings from the open AllSideR dataset (older than today's live AllSides ratings, which are updated periodically). Click any outlet label to see its current AllSides page.",
+"outlets": [
+{
+"name": "ABC News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/abc-news-media-bias",
+"confidence": "High"
+},
+{
+"name": "AJ+",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/aj-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Al Jazeera",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/al-jazeera-america",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "AlterNet",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/alternet-media-bias",
+"confidence": "High"
+},
+{
+"name": "American Greatness",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/american-greatness-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "American Spectator",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/american-spectator",
+"confidence": "Medium"
+},
+{
+"name": "American Thinker",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/american-thinker",
+"confidence": "Medium"
+},
+{
+"name": "Aquinas College Saint",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/aquinas-college-saint",
+"confidence": ""
+},
+{
+"name": "Arkansas Democrat-Gazette",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/arkansas-democrat-gazette",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Associated Press",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/associated-press-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "Atlanta Journal-Constitution",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/atlanta-journal-constitution",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Austin American-Statesman",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/austin-american-statesman",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Axios",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/axios",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "AZ Central",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/az-central-media-bias",
+"confidence": ""
+},
+{
+"name": "Barnstable Patriot",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/barnstable-patriot",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "BBC News",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/bbc-news-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "Bearing Drift",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/bearing-drift",
+"confidence": "High"
+},
+{
+"name": "Bloomberg",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/bloomberg-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "Blue Virginia",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/blue-virginia",
+"confidence": ""
+},
+{
+"name": "Boing Boing",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/boing-boing",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Boston Herald",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/boston-herald-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Boston Herald Editorial",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/boston-herald-editorial-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Bowling Green Daily News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/bowling-green-daily-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Breitbart News",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/breitbart",
+"confidence": "High"
+},
+{
+"name": "Business Insider",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/business-insider",
+"confidence": ""
+},
+{
+"name": "Bustle",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/bustle",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "BuzzFeed News",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/buzzfeed-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "C-SPAN",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/c-span",
+"confidence": "Medium"
+},
+{
+"name": "CalMatters",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/calmatters",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "CalWatchdog",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/calwatchdog",
+"confidence": "Medium"
+},
+{
+"name": "Care 2",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/care-2",
+"confidence": ""
+},
+{
+"name": "CBN",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/cbn",
+"confidence": "Medium"
+},
+{
+"name": "CBS News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/cbs-news-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Center - Major Media Sources",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/center-major-media-sources",
+"confidence": ""
+},
+{
+"name": "Center for Public Integrity",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/center-public-integrity",
+"confidence": ""
+},
+{
+"name": "Centre View",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/centre-view",
+"confidence": ""
+},
+{
+"name": "Chicago Sun-Times",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/chicago-sun-times",
+"confidence": "Medium"
+},
+{
+"name": "Chicago Tribune",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/chicago-tribune",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Christian Science Monitor",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/christian-science-monitor",
+"confidence": "High"
+},
+{
+"name": "City Journal",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/city-journal-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "CNBC",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/cnbc",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "CNET",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/cnet",
+"confidence": ""
+},
+{
+"name": "CNN (Web News)",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/cnn-media-bias",
+"confidence": "High"
+},
+{
+"name": "CNN - Editorial",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/cnn-editorial",
+"confidence": "Medium"
+},
+{
+"name": "CNS News",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/cns-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "CNSNews.com",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/cnsnewscom",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Columbia Journalism Review",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/columbia-journalism-review",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Commentary Magazine",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/commentary-magazine-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Conservative HQ",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/conservative-hq",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Cook Report",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/cook-report",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Countable",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/countable-media-bias",
+"confidence": "High"
+},
+{
+"name": "Counter Currents",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/counter-currents",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "CrowdPAC",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/crowdpac",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "CU Independent",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/cu-independent",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Current Affairs",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/current-affairs-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Daily Beast",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/daily-beast-media-bias",
+"confidence": ""
+},
+{
+"name": "Daily Cardinal",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/daily-cardinal",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Daily Kos",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/daily-kos",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Daily Mail",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/daily-mail",
+"confidence": "Medium"
+},
+{
+"name": "Daily Northwestern",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/daily-northwestern",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Daily Press",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/daily-press",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Daily Progress",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/daily-progress",
+"confidence": ""
+},
+{
+"name": "Daily Targum",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/daily-targum",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Defense One",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/defense-one-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Democracy Now",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/democracy-now",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Deseret News",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/deseret-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Diplomatic Courier",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/diplomatic-courier",
+"confidence": "Medium"
+},
+{
+"name": "Drudge Report",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/drudge-report",
+"confidence": "Medium"
+},
+{
+"name": "Duke Chronicle",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/duke-chronicle",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Esquire",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/esquire",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Estes Park Trail Gazette",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/estes-park-trail-gazette",
+"confidence": ""
+},
+{
+"name": "Eurek Alert",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/eurek-alert",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Fact Checker Blog",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/fact-checker-blog",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "FactCheck.org",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/factcheckorg-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Fair.org",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/fairorg",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Falls Church News - Press",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/falls-church-news-press",
+"confidence": ""
+},
+{
+"name": "Financial Times",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/financial-times-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Fiscal Times",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/fiscal-times",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "FiveThirtyEight",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/fivethirtyeight-0",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Forbes",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/forbes",
+"confidence": ""
+},
+{
+"name": "Foreign Affairs",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/foreign-affairs",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Fox News Latino",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/fox-news-latino",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Fox News Opinion",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/fox-news-editorial-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Fox Online News",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/fox-news-media-bias",
+"confidence": "High"
+},
+{
+"name": "FrontPage Magazine",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/frontpage-magazine",
+"confidence": "Medium"
+},
+{
+"name": "Google News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/google-news-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "Grist",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/grist",
+"confidence": ""
+},
+{
+"name": "Hampton Roads Messanger",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/hampton-roads-messanger",
+"confidence": ""
+},
+{
+"name": "Harvard Business School",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/harvard-business-school",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Herald Democrat",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/herald-democrat-0",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Honolulu Civil Beat",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/honolulu-civil-beat",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "HotAir",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/hotair",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "How Do We Fix It?",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/how-do-we-fix-it",
+"confidence": "Medium"
+},
+{
+"name": "Howard Kurtz",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/howard-kurtz-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "HuffPost",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/huffpost-media-bias",
+"confidence": "High"
+},
+{
+"name": "Inacow",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/inacow",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Independent Journal Review",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/independent-journal-review",
+"confidence": "Medium"
+},
+{
+"name": "Indiana Daily Student",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/indiana-daily-student",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Indy Online",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/indy-online",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Indy Week",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/indy-week",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "InfoWars",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/infowars",
+"confidence": "Medium"
+},
+{
+"name": "Inside Philanthropy",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/inside-philanthropy",
+"confidence": ""
+},
+{
+"name": "Intellectual Conservative",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/intellectual-conservative",
+"confidence": ""
+},
+{
+"name": "International Business Times",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/international-business-times",
+"confidence": ""
+},
+{
+"name": "Investor's Business Daily",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/investors-business-daily",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "IVN",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/ivn",
+"confidence": "Medium"
+},
+{
+"name": "Jacobin",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/jacobin-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Jezebel",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/jezebel-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Journalist's Resource",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/journalists-resource",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Jubilee Media",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/jubilee-media-bias",
+"confidence": ""
+},
+{
+"name": "Judicial Watch",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/judicial-watch",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "KATU",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/katu-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "KQED",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/kqed",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "KSL",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/ksl",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Las Vegas Sun",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/las-vegas-sun",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Leesburg Today",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/leesburg-today",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Left - Major Media Sources",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/left-major-publications",
+"confidence": ""
+},
+{
+"name": "Lifehacker",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/lifehacker",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Live Action News",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/live-action-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Longmont Times-Call",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/longmont-times-call",
+"confidence": ""
+},
+{
+"name": "Los Angeles Times",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/los-angeles-times-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Louisville Courier-Journal",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/louisville-courier-journal",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "MarketWatch",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/marketwatch-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Mashable",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/mashable",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "McClatchyDC",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/mcclatchydc-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Media Matters",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/media-matters-bias",
+"confidence": ""
+},
+{
+"name": "Media Research Center",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/media-research-center",
+"confidence": ""
+},
+{
+"name": "Mediaite",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/mediaite-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Miami Herald",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/miami-herald",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "MichelleMalkin.com",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/michellemalkincom",
+"confidence": ""
+},
+{
+"name": "Michigan Daily",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/michigan-daily",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "MIT News",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/mit-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Mother Jones",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/mother-jones-bias",
+"confidence": ""
+},
+{
+"name": "MSNBC",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/msnbc",
+"confidence": "Medium"
+},
+{
+"name": "MTV News Online",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/mtv-news-online-media-bias",
+"confidence": ""
+},
+{
+"name": "National Journal",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/national-journal",
+"confidence": ""
+},
+{
+"name": "National Review",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/national-review",
+"confidence": "Medium"
+},
+{
+"name": "NBC Today Show",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/nbc-today-show",
+"confidence": ""
+},
+{
+"name": "NBCNews.com",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/nbc-news-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "New Republic",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/new-republic",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "New York Daily News",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/new-york-daily-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "New York Magazine",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/new-york-magazine",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "New York Post",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/new-york-post",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "New York Times - News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/new-york-times",
+"confidence": "High"
+},
+{
+"name": "New York Times - Opinion",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/new-york-times-opinion-media-bias",
+"confidence": "High"
+},
+{
+"name": "Newsmax",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/newsmax",
+"confidence": "Medium"
+},
+{
+"name": "Newsweek",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/newsweek",
+"confidence": "Medium"
+},
+{
+"name": "NMPolitics.net",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/nmpoliticsnet",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "NPR Editorial",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/npr-editorial",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "NPR Online News",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/npr-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "One America News Network",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/one-america-news-network-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Orange County Register",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/orange-county-register",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Pacific Standard",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/pacific-standard",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "PBS NewsHour",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/pbs-newshour",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Peacock Panache",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/peacock-panache",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Pittsburgh Post-Gazette",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/pittsburgh-post-gazette",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "PJ Media",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/pj-media-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "PJ Media",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/pj-media",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Politico",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/politico-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "PoliticusUSA",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/politicususa",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "PolitiFact",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/politifact",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Portland Press Herald",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/portland-press-herarld",
+"confidence": "Medium"
+},
+{
+"name": "PRI (Public Radio International)",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/pri-public-radio-international",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Progressive Voices of Iowa",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/progressive-voices-iowa",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Project Veritas",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/project-veritas-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "ProPublica",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/propublica",
+"confidence": ""
+},
+{
+"name": "PXW News",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/pxw-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Quartz",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/quartz",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Quillette",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/quillette-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Rasmussen Reports",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/rasmussen-reports",
+"confidence": ""
+},
+{
+"name": "Raw Story",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/raw-story",
+"confidence": ""
+},
+{
+"name": "RealClearPolitics",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/real-clear-politics",
+"confidence": ""
+},
+{
+"name": "Reason",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/reason",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Record Journal",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/record-journal",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Red State",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/red-state",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Reuters",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/reuters",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Richmond Times Dispatch",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/richmond-times-dispatch",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Right - Major Media Sources",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/right-major-publications",
+"confidence": ""
+},
+{
+"name": "Right Side News",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/right-side-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Right Wing News",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/right-wing-news",
+"confidence": "High"
+},
+{
+"name": "Roll Call",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/roll-call-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "RollingStone.com",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/rolling-stone",
+"confidence": ""
+},
+{
+"name": "Salon",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/salon",
+"confidence": "Medium"
+},
+{
+"name": "San Francisco Chronicle",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/san-francisco-chronicle",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "San Jose Mercury News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/san-jose-mercury-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Science Daily",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/science-daily",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Scientific American",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/scientific-american",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "SF Weekly",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/sf-weekly",
+"confidence": ""
+},
+{
+"name": "SFGate",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/sf-gate",
+"confidence": ""
+},
+{
+"name": "Sky-Hi Daily News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/sky-hi-daily-news",
+"confidence": ""
+},
+{
+"name": "Slate",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/slate",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Smerconish",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/smerconish-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Socialist Alternative",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/socialist-alternative",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Socialist Project/The Bullet",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/socialist-projectthe-bullet",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Splinter",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/splinter-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Spokesman Review",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/spokesman-review",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "State Journal",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/state-journal",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Subverse",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/subverse-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Tallahassee Democrat",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/tallahassee-democrat",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "TechCrunch",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/techcrunch-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Teen Vogue",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/teen-vogue",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Test Source",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/test-source",
+"confidence": ""
+},
+{
+"name": "The Advocate-Messenger",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/advocate-messenger",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The American Conservative",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/american-conservative-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Atlantic",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/atlantic",
+"confidence": ""
+},
+{
+"name": "The Boston Globe",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/boston-globe",
+"confidence": "High"
+},
+{
+"name": "The Cadiz Record",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/cadiz-record",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Canyon County Zephyr",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/canyon-county-zephry",
+"confidence": "High"
+},
+{
+"name": "The College Fix",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/college-fix",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Commercial Appeal",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/commercial-appeal",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Courier-Journal",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/courier-journal",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Daily Caller",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/daily-caller",
+"confidence": "Medium"
+},
+{
+"name": "The Daily Show (humor)",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/daily-show",
+"confidence": ""
+},
+{
+"name": "The Daily Signal",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/daily-signal",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Daily Wire",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/daily-wire",
+"confidence": "Medium"
+},
+{
+"name": "The Dallas Morning News",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/dallas-morning-news",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Delaware County Daily Times",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/delaware-county-daily-times",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Economist",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/economist",
+"confidence": ""
+},
+{
+"name": "The Epoch Times",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/epoch-times-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "The Federalist",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/federalist",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Fulcrum",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/fulcrum-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Gateway Pundit",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/gateway-pundit",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Guardian",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/guardian",
+"confidence": "Medium"
+},
+{
+"name": "The Hill",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/hill-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Independent",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/independent-0",
+"confidence": ""
+},
+{
+"name": "The Intercept",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/intercept",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Jerusalem Post",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/jerusalem-post-media-bias",
+"confidence": ""
+},
+{
+"name": "The Justice",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/justice",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Korea Herald",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/korea-herald",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Libertarian Republic",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/libertarian-republic",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Nation",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/nation",
+"confidence": ""
+},
+{
+"name": "The New Yorker",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/new-yorker",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Observer (New York)",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/observer",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Oracle",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/oracle",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Philadelphia Inquirer",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/phillycom",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Post Millennial",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/post-millennial-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Red and Black",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/red-and-black",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Reliable Bias",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/reliable-bias",
+"confidence": ""
+},
+{
+"name": "The Republican",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/republican",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Resurgent",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/resurgent-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Root",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/root",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Sacramento Bee",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/sacramento-bee",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Saturday Evening Post",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/saturday-evening-post",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Telegraph - UK",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/telegraph-uk",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Texas Observer",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/texas-observer-media-bias",
+"confidence": ""
+},
+{
+"name": "The Verge",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/verge",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Week - News",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/the-week-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "The Weekly Standard",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/weekly-standard",
+"confidence": "High"
+},
+{
+"name": "TheBlaze.com",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/theblaze-bias",
+"confidence": "Medium"
+},
+{
+"name": "ThinkProgress",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/thinkprogress-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Time Magazine",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/time-magazine-news-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Townhall",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/townhall-bias",
+"confidence": "Medium"
+},
+{
+"name": "Truth or Fiction",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/truth-or-fiction",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Truthdig",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/truthdig-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "TruthOut",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/truthout",
+"confidence": ""
+},
+{
+"name": "U.S. News & World Report",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/us-news-and-world-report",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Univision",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/univision",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Upworthy",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/upworthy",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "USA TODAY",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/usa-today-media-bias",
+"confidence": "High"
+},
+{
+"name": "Vanity Fair",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/vanity-fair",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Vice",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/vice-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Volante",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/volante",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Vox",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/vox-news-media-bias",
+"confidence": "High"
+},
+{
+"name": "VT Digger",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/vt-digger",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Wake Up to Politics",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/wake-politics-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Wall Street Journal - Editorial",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/wall-street-journal-opinion",
+"confidence": "High"
+},
+{
+"name": "Wall Street Journal - News",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/wall-street-journal-media-bias",
+"confidence": "High"
+},
+{
+"name": "WANDTV",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/wandtv-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Washington Examiner",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/washington-examiner",
+"confidence": "Medium"
+},
+{
+"name": "Washington Free Beacon",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/washington-free-beacon",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Washington Monthly",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/washington-monthly",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Washington Post",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/washington-post-media-bias",
+"confidence": "High"
+},
+{
+"name": "Washington Times",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/washington-times-bias",
+"confidence": "Medium"
+},
+{
+"name": "Watchdog.org",
+"rating": "Lean Right",
+"url": "https://www.allsides.com/news-source/watchdogorg",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Western Journalism",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/western-journalism",
+"confidence": "Medium"
+},
+{
+"name": "WFAE",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/wfae",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "WGBH",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/wgbh",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "WGN",
+"rating": "Center",
+"url": "https://www.allsides.com/news-source/wgn-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Whatfinger News",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/whatfinger-news-media-bias",
+"confidence": "Low or Initial Rating"
+},
+{
+"name": "Wisconsin Gazette",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/wisconsin-gazette",
+"confidence": ""
+},
+{
+"name": "WND.com",
+"rating": "Right",
+"url": "https://www.allsides.com/news-source/wndcom",
+"confidence": "High"
+},
+{
+"name": "Yahoo! News",
+"rating": "Lean Left",
+"url": "https://www.allsides.com/news-source/yahoo-news-media-bias",
+"confidence": "Medium"
+},
+{
+"name": "Yes! Magazine",
+"rating": "Left",
+"url": "https://www.allsides.com/news-source/yes-magazine",
+"confidence": ""
+}
+]
+}
