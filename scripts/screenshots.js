@@ -2,7 +2,7 @@
 const { chromium } = require('playwright-core');
 const path = require('path');
 const BASE = process.env.BASE || 'http://localhost:3111';
-const OUT = path.join(__dirname, '..', 'screenshots');
+const OUT = path.join(__dirname, '..', 'screenshots', process.env.SUB || '');
 const VIEWS = { mobile: { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true }, desktop: { width: 1280, height: 900 } };
 const PAGES = [
   ['01-home', '#/', null],
