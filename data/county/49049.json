@@ -1,0 +1,202 @@
+{
+ "county": "Utah County",
+ "state": "UT",
+ "asOf": "2026-09-02",
+ "sources": [
+  {
+   "label": "Utah County Clerk — 2026 General Election Candidate Certification (Sept 2, 2026)",
+   "url": "https://www.utahcounty.gov/cms/uploads/Utah_County_2026_General_Election_Candidate_Certification_4e705c1719.pdf",
+   "kind": "official"
+  },
+  {
+   "label": "Utah County Elections — Public Notices",
+   "url": "https://vote.utahcounty.gov/public-notices",
+   "kind": "official"
+  }
+ ],
+ "offices": [
+  {
+   "office": "County Commission Seat A",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Jeanne Marie Bowen",
+     "party": "Democratic"
+    },
+    {
+     "name": "Michelle Kaufusi",
+     "party": "Republican"
+    },
+    {
+     "name": "Jacob D. Oaks",
+     "party": "Independent American"
+    }
+   ]
+  },
+  {
+   "office": "County Commission Seat B",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "J. Allen",
+     "party": "Democratic"
+    },
+    {
+     "name": "David M. Spencer",
+     "party": "Republican"
+    },
+    {
+     "name": "David Hinckley",
+     "party": "Forward"
+    }
+   ]
+  },
+  {
+   "office": "County Attorney",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Jeff Gray",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Auditor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Gina Tanner",
+     "party": "Republican"
+    },
+    {
+     "name": "Hans V. Andersen",
+     "party": "Independent American"
+    }
+   ]
+  },
+  {
+   "office": "County Clerk",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Corey K Astill",
+     "party": "Republican"
+    },
+    {
+     "name": "Russ J Rampton",
+     "party": "Forward"
+    }
+   ]
+  },
+  {
+   "office": "County Sheriff",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Mike Smith",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "Nebo School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Joseph Earnest",
+     "party": ""
+    },
+    {
+     "name": "Scott P. Card",
+     "party": ""
+    }
+   ],
+   "area": "Nebo School District"
+  },
+  {
+   "office": "Nebo School District board, District 4",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Perry C. Ewell",
+     "party": ""
+    },
+    {
+     "name": "Rick B. Ainge",
+     "party": ""
+    }
+   ],
+   "area": "Nebo School District"
+  },
+  {
+   "office": "Nebo School District board, District 5",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Shannon M. Acor",
+     "party": ""
+    }
+   ],
+   "area": "Nebo School District"
+  },
+  {
+   "office": "Provo School District board, District 1",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Lisa Boyce",
+     "party": ""
+    }
+   ],
+   "area": "Provo School District"
+  },
+  {
+   "office": "Provo School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Melanie Hall",
+     "party": ""
+    }
+   ],
+   "area": "Provo School District"
+  },
+  {
+   "office": "Provo School District board, District 3",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Megan Van Wagenen",
+     "party": ""
+    }
+   ],
+   "area": "Provo School District"
+  },
+  {
+   "office": "Provo School District board, District 4",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jennifer Partridge",
+     "party": ""
+    }
+   ],
+   "area": "Provo School District"
+  }
+ ],
+ "measures": [
+  {
+   "title": "Salem City — Proposition #8 (RAP tax)",
+   "area": "Salem",
+   "options": [
+    "For",
+    "Against"
+   ],
+   "text": "Shall Salem, Utah be authorized to impose a sales and use tax of one-tenth of one percent (0.1%) to provide revenues for Recreational (including Parks), and Cultural Facilities and Organizations (commonly known as the \"RAP TAX\") within the City for a period of ten (10) years?"
+  }
+ ],
+ "retention": [],
+ "fips": "49049",
+ "built": "2026-10-24"
+}

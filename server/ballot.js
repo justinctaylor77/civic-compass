@@ -1,5 +1,6 @@
 // Assemble the four ballot sections (City / County / State / Federal) from the parsed sources.
 const bp = require('./ballotpedia');
+const countyData = require('./county');
 const { STATES } = require('./states');
 const PARTY = { D: 'Democratic', R: 'Republican', L: 'Libertarian', G: 'Green', I: 'Independent', C: 'Constitution', N: 'Nonpartisan', NP: 'Nonpartisan', U: 'Unaffiliated', W: 'Write-in' };
 const party = (p) => PARTY[p] || p || '';
@@ -116,7 +117,8 @@ async function buildBallot(loc) {
   } else {
     for (const k of Object.keys(out)) { out[k].status = 'unavailable'; }
   }
-  out.county.races.sort((a, b) => (/Court/.test(a.office) ? 1 : 0) - (/Court/.test(b.office) ? 1 : 0));
+  try { countyData.apply(loc, out, src); } catch (e) { warnings.push('Official county data could not be applied (' + e.message + ').'); }
+  out.county.races.sort((a, b) => (a.addressDependent ? 1 : 0) - (b.addressDependent ? 1 : 0) || (/Court/.test(a.office) ? 1 : 0) - (/Court/.test(b.office) ? 1 : 0));
   out.links = officialLinks(stateName, abbr);
   return { out, sources: src, warnings };
 }

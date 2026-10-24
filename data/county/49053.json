@@ -1,0 +1,181 @@
+{
+ "county": "Washington County",
+ "state": "UT",
+ "asOf": "2026-09-01",
+ "sources": [
+  {
+   "label": "Washington County Clerk — 2026 General Election Certification of County Candidates (Sept 2026)",
+   "url": "https://www.washco.utah.gov/wp-content/uploads/2026/09/2026-General-Election-Certification-of-County-Candidates-Notice.pdf",
+   "kind": "official"
+  }
+ ],
+ "offices": [
+  {
+   "office": "County Commission Seat A",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Gil Almquist",
+     "party": "Republican"
+    },
+    {
+     "name": "Gail Koske",
+     "party": "Democratic"
+    }
+   ]
+  },
+  {
+   "office": "County Commission Seat B",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Troy G Belliston",
+     "party": "Republican"
+    },
+    {
+     "name": "Sarah N. Anderson",
+     "party": "Democratic"
+    },
+    {
+     "name": "Kristin N Isham",
+     "party": "Constitution"
+    }
+   ]
+  },
+  {
+   "office": "County Attorney",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Jerry D. Jaeger",
+     "party": "Republican"
+    },
+    {
+     "name": "Edward Flint",
+     "party": "Democratic"
+    }
+   ]
+  },
+  {
+   "office": "County Clerk/Auditor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Ryan Sullivan",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Sheriff",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Johnny Heppler",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "Washington County School District board, District 4",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Larene Cox",
+     "party": ""
+    }
+   ],
+   "area": "Washington County School District"
+  },
+  {
+   "office": "Washington County School District board, District 5",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Dan C. Zaleski",
+     "party": ""
+    },
+    {
+     "name": "David B. Stirland",
+     "party": ""
+    }
+   ],
+   "area": "Washington County School District"
+  },
+  {
+   "office": "Washington County School District board, District 6",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Burke Staheli",
+     "party": ""
+    }
+   ],
+   "area": "Washington County School District"
+  },
+  {
+   "office": "Washington County School District board, District 7",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "N. Craig Hammer",
+     "party": ""
+    }
+   ],
+   "area": "Washington County School District"
+  }
+ ],
+ "measures": [
+  {
+   "title": "Santa Clara — local ballot proposition",
+   "area": "Santa Clara",
+   "options": [
+    "For",
+    "Against"
+   ],
+   "text": "Shall Santa Clara City, Utah, be authorized to impose a local sales and use tax of up to 1.0% on taxable transactions within the City to fund emergency services, including fire protection, ambulance services, emergency medical services, personnel, equipment, facilities, and related operational costs, as authorized by Utah Code 59-12-2402?"
+  },
+  {
+   "title": "Virgin — local ballot proposition",
+   "area": "Virgin",
+   "options": [
+    "For",
+    "Against"
+   ],
+   "text": "Shall Virgin Town, Washington County, Utah, increase the Resort Communities Sales and Use Tax rate by an additional one-half percent (0.5%), as authorized by Utah Code Section 59-12-402, to be collected on taxable transactions within Virgin Town?"
+  },
+  {
+   "title": "Washington — local ballot proposition",
+   "area": "Washington",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "text": "Shall Washington City impose an additional .67% (1.0% total) Emergency Services Sales and Use Tax on taxable sales within the City to fund emergency services such as fire protection, ambulance service, and emergency medical response? If approved, the City Council has expressed its intent to reduce the City portion of property taxes by 50%, subject to Truth-in-Taxation requirements."
+  }
+ ],
+ "retention": [
+  {
+   "court": "Santa Clara Justice Court",
+   "judge": "K. Jake Graff",
+   "area": "Santa Clara"
+  },
+  {
+   "court": "Fifth Judicial District Court (Beaver, Iron, Washington counties)",
+   "judge": "Jay Winward",
+   "area": null
+  },
+  {
+   "court": "Fifth Judicial District Court (Beaver, Iron, Washington counties)",
+   "judge": "Eric Russell Gentry",
+   "area": null
+  },
+  {
+   "court": "Fifth Judicial District Court (Beaver, Iron, Washington counties)",
+   "judge": "Matthew L. Bell",
+   "area": null
+  }
+ ],
+ "fips": "49053",
+ "built": "2026-10-24"
+}

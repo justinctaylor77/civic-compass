@@ -1,0 +1,222 @@
+{
+ "checkedOn": "2026-10-24",
+ "note": "Official state sources only. Results portal = a link our server could open on the check date; where blank, use the state election office link. Portals normally go live on election night after polls close. Links were tested from our server on the check date; some state sites block automated checks and are marked.",
+ "states": {
+  "AK": {
+   "results": null,
+   "office": "https://www.elections.alaska.gov/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "AL": {
+   "results": null,
+   "office": "https://www.sos.alabama.gov/alabama-votes"
+  },
+  "AR": {
+   "results": null,
+   "office": "https://www.sos.arkansas.gov/elections"
+  },
+  "AZ": {
+   "results": null,
+   "office": "https://azsos.gov/elections",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "CA": {
+   "results": "https://electionresults.sos.ca.gov/",
+   "office": "https://www.sos.ca.gov/elections"
+  },
+  "CO": {
+   "results": "https://results.enr.clarityelections.com/CO/",
+   "office": "https://www.coloradosos.gov/pubs/elections/"
+  },
+  "CT": {
+   "results": "https://electionhistory.ct.gov/",
+   "office": "https://portal.ct.gov/sots/election-services"
+  },
+  "DC": {
+   "results": "https://electionresults.dcboe.org/",
+   "office": "https://www.dcboe.org/"
+  },
+  "DE": {
+   "results": null,
+   "office": "https://elections.delaware.gov/"
+  },
+  "FL": {
+   "results": "https://results.elections.myflorida.com/",
+   "office": "https://dos.fl.gov/elections/"
+  },
+  "GA": {
+   "results": "https://results.sos.ga.gov/results/public/Georgia",
+   "office": "https://sos.ga.gov/elections-division",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "HI": {
+   "results": "https://elections.hawaii.gov/election-results/",
+   "office": "https://elections.hawaii.gov/"
+  },
+  "IA": {
+   "results": "https://electionresults.iowa.gov/IA/",
+   "office": "https://sos.iowa.gov/elections/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "ID": {
+   "results": "https://voteidaho.gov/election-results/",
+   "office": "https://voteidaho.gov/"
+  },
+  "IL": {
+   "results": "https://www.elections.il.gov/ElectionOperations/ElectionVoteTotals.aspx",
+   "office": "https://www.elections.il.gov/"
+  },
+  "IN": {
+   "results": "https://enr.indianavoters.in.gov/site/index.html",
+   "office": "https://www.in.gov/sos/elections/"
+  },
+  "KS": {
+   "results": "https://www.sos.ks.gov/elections/elections.html",
+   "office": "https://www.sos.ks.gov/elections/"
+  },
+  "KY": {
+   "results": null,
+   "office": "https://elect.ky.gov/"
+  },
+  "LA": {
+   "results": null,
+   "office": "https://voterportal.sos.la.gov/"
+  },
+  "MA": {
+   "results": "https://electionstats.state.ma.us/",
+   "office": "https://www.sec.state.ma.us/divisions/elections/"
+  },
+  "MD": {
+   "results": "https://elections.maryland.gov/elections/2026/",
+   "office": "https://elections.maryland.gov/"
+  },
+  "ME": {
+   "results": null,
+   "office": "https://www.maine.gov/sos/elections-voting"
+  },
+  "MI": {
+   "results": null,
+   "office": "https://mielections.us/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "MN": {
+   "results": null,
+   "office": "https://www.sos.mn.gov/election-administration-campaigns/"
+  },
+  "MO": {
+   "results": null,
+   "office": "https://www.sos.mo.gov/elections",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "MS": {
+   "results": "https://www.sos.ms.gov/elections-voting/election-results",
+   "office": "https://www.sos.ms.gov/elections-voting"
+  },
+  "MT": {
+   "results": null,
+   "office": "https://sosmt.gov/elections/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "NC": {
+   "results": "https://er.ncsbe.gov/",
+   "office": "https://www.ncsbe.gov/"
+  },
+  "ND": {
+   "results": "https://results.sos.nd.gov/",
+   "office": "https://vip.sos.nd.gov/"
+  },
+  "NE": {
+   "results": "https://electionresults.nebraska.gov/",
+   "office": "https://sos.nebraska.gov/elections"
+  },
+  "NH": {
+   "results": null,
+   "office": "https://www.sos.nh.gov/elections",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "NJ": {
+   "results": "https://nj.gov/state/elections/election-information-results.shtml",
+   "office": "https://nj.gov/state/elections/"
+  },
+  "NM": {
+   "results": "https://electionresults.sos.nm.gov/",
+   "office": "https://www.sos.nm.gov/"
+  },
+  "NV": {
+   "results": "https://silverstateelection.nv.gov/",
+   "office": "https://www.nvsos.gov/sos/elections"
+  },
+  "NY": {
+   "results": "https://www.elections.ny.gov/Results.html",
+   "office": "https://www.elections.ny.gov/"
+  },
+  "OH": {
+   "results": null,
+   "office": "https://www.ohiosos.gov/elections/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "OK": {
+   "results": null,
+   "office": "https://oklahoma.gov/elections.html"
+  },
+  "OR": {
+   "results": null,
+   "office": "https://sos.oregon.gov/elections/"
+  },
+  "PA": {
+   "results": "https://www.electionreturns.pa.gov/",
+   "office": "https://www.vote.pa.gov/"
+  },
+  "RI": {
+   "results": "https://www.ri.gov/election/results/",
+   "office": "https://vote.sos.ri.gov/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "SC": {
+   "results": "https://www.enr-scvotes.org/",
+   "office": "https://scvotes.gov/"
+  },
+  "SD": {
+   "results": "https://electionresults.sd.gov/",
+   "office": "https://sdsos.gov/elections-voting/"
+  },
+  "TN": {
+   "results": null,
+   "office": "https://sos.tn.gov/elections"
+  },
+  "TX": {
+   "results": "https://results.texas-election.com/",
+   "office": "https://www.sos.state.tx.us/elections/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "UT": {
+   "results": "https://electionresults.utah.gov/results/public/Utah",
+   "office": "https://vote.utah.gov/"
+  },
+  "VA": {
+   "results": "https://www.elections.virginia.gov/results/",
+   "office": "https://www.elections.virginia.gov/"
+  },
+  "VT": {
+   "results": "https://electionarchive.vermont.gov/",
+   "office": "https://sos.vermont.gov/elections/"
+  },
+  "WA": {
+   "results": "https://results.votewa.gov/results/public/washington",
+   "office": "https://www.sos.wa.gov/elections/"
+  },
+  "WI": {
+   "results": null,
+   "office": "https://elections.wi.gov/",
+   "officeNote": "Our server couldn't test this link (the site blocks automated checks); it is the state's official election page."
+  },
+  "WV": {
+   "results": "https://apps.sos.wv.gov/elections/results/",
+   "office": "https://sos.wv.gov/elections/"
+  },
+  "WY": {
+   "results": null,
+   "office": "https://sos.wyo.gov/Elections/"
+  }
+ }
+}

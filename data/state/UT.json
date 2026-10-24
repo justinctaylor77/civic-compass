@@ -1,0 +1,18 @@
+{
+ "asOf": "2026-09-01",
+ "note": "Statewide judicial-retention questions that appear on every Utah ballot (identical in the Cache County and Washington County clerks' certifications, which reproduce the Lieutenant Governor's notice).",
+ "sources": [
+  {"label": "Washington County Clerk — 2026 General Election Certification (Lt. Governor's notice, judicial retention)", "url": "https://www.washco.utah.gov/wp-content/uploads/2026/09/2026-General-Election-Certification-of-County-Candidates-Notice.pdf", "kind": "official"},
+  {"label": "Cache County Clerk — 2026 Regular General Election Certification", "url": "https://www.cachecounty.gov/assets/department/clerk/elections/ElectionNotices/2026/General/Cache_County_2026_General_Election_Certification_Final2.pdf", "kind": "official"},
+  {"label": "Utah Judicial Performance Evaluation Commission — Know Your Judges (official evaluations)", "url": "https://knowyourjudges.utah.gov/s/", "kind": "official"}
+ ],
+ "retention": [
+  {"court": "Utah Supreme Court", "judge": "Jill M. Pohlman"},
+  {"court": "Utah Court of Appeals", "judge": "Michele M. Christiansen Forster"},
+  {"court": "Utah Court of Appeals", "judge": "David Ned Mortensen"},
+  {"court": "Utah Court of Appeals", "judge": "John David Luthy"},
+  {"court": "Utah Court of Appeals", "judge": "Ryan M. Harris"},
+  {"court": "Utah Court of Appeals", "judge": "Amy Jo Oliver"},
+  {"court": "Utah Court of Appeals", "judge": "Gregory Keith Orme"}
+ ]
+}

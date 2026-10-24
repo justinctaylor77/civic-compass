@@ -10,6 +10,7 @@ const civic = require('./civic');
 const news = require('./news');
 const { scrub } = require('./util');
 const { STATES } = require('./states');
+const results = require('./results');
 
 const PORT = process.env.PORT || 3000;
 const ELECTION = { date: '2026-11-03', label: 'Tuesday, November 3, 2026' };
@@ -34,6 +35,24 @@ app.get('/api/ballot', wrap(async (req, res) => {
     election: ELECTION, location: loc, ballot: out, sources, warnings,
     civic: cv, generatedAt: new Date().toISOString(),
   });
+}));
+
+// Past results (bundled MEDSL data) + official live-results links. ?state=UT[&county=49049&cd=3] or ?q=<zip/city/address>
+app.get('/api/results', wrap(async (req, res) => {
+  const q = String(req.query.q || '').trim();
+  if (!q && !req.query.state) return res.json({ states: results.states() });
+  let state = req.query.state, countyFips = req.query.county, cd = req.query.cd, names = [], location = null, countyName = null;
+  if (q) {
+    const loc = await resolve(q);
+    state = loc.state.abbr; countyFips = loc.county && loc.county.fips; cd = loc.cd && !loc.cd.atLarge ? loc.cd.number : null; location = loc; countyName = loc.county && loc.county.name;
+    try {
+      const { out } = await buildBallot(loc);
+      names = [...out.federal.races, ...out.state.races].flatMap((r) => r.candidates.map((c) => c.name));
+    } catch (e) { /* history is optional */ }
+  }
+  const v = results.view({ state, countyFips, cd: cd == null || cd === '' ? null : Number(cd), names, countyName });
+  if (location) v.location = { label: [location.cityName, location.state.abbr].filter(Boolean).join(', '), county: location.county, cd: location.cd, input: location.input };
+  res.json(v);
 }));
 
 const parseDistrict = (office) => { const m = String(office).match(/District (\d+)$/); return m ? m[1].padStart(2, '0') : null; };

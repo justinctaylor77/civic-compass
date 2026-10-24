@@ -1,0 +1,130 @@
+{
+ "county": "Franklin County",
+ "state": "OH",
+ "asOf": "2026-10-16",
+ "sources": [
+  {
+   "label": "Franklin County Board of Elections — 2026 General Election Candidates (revised Oct 16, 2026)",
+   "url": "https://www.vote.franklincountyohio.gov/getmedia/e0a4ca45-6893-45c1-8190-87696f8804b4/2026-General-Candidate-List-5",
+   "kind": "official"
+  },
+  {
+   "label": "Franklin County Board of Elections — 2026 election information",
+   "url": "https://www.vote.franklincountyohio.gov/election-info/2026",
+   "kind": "official"
+  }
+ ],
+ "offices": [
+  {
+   "office": "JUDGE OF THE COURT OF COMMON PLEAS (General Division)",
+   "level": "judicial",
+   "candidates": [
+    {
+     "name": "Carl Aveni",
+     "party": ""
+    }
+   ],
+   "term": "Term begins 01/01/2027"
+  },
+  {
+   "office": "JUDGE OF THE COURT OF COMMON PLEAS (General Division)",
+   "level": "judicial",
+   "candidates": [
+    {
+     "name": "Andy Miller",
+     "party": ""
+    }
+   ],
+   "term": "Term begins 02/09/2027"
+  },
+  {
+   "office": "JUDGE OF THE COURT OF COMMON PLEAS (General Division)",
+   "level": "judicial",
+   "candidates": [
+    {
+     "name": "David Young",
+     "party": ""
+    }
+   ],
+   "term": "Term begins 07/01/2027"
+  },
+  {
+   "office": "JUDGE OF THE COURT OF COMMON PLEAS (General Division)",
+   "level": "judicial",
+   "candidates": [
+    {
+     "name": "Chris Brown",
+     "party": ""
+    }
+   ],
+   "term": "Term begins 07/02/2027"
+  },
+  {
+   "office": "JUDGE OF THE COURT OF COMMON PLEAS (Domestic Relations Division)",
+   "level": "judicial",
+   "candidates": [
+    {
+     "name": "Kelley Gabrielle Boller",
+     "party": ""
+    }
+   ],
+   "term": "Term begins 01/02/2027"
+  },
+  {
+   "office": "JUDGE OF THE COURT OF COMMON PLEAS (Domestic Relations Division)",
+   "level": "judicial",
+   "candidates": [
+    {
+     "name": "Lasheyl N. Stroud",
+     "party": ""
+    }
+   ],
+   "term": "Term begins 01/03/2027"
+  },
+  {
+   "office": "JUDGE OF THE COURT OF COMMON PLEAS-Probate",
+   "level": "judicial",
+   "candidates": [
+    {
+     "name": "Kelly Green",
+     "party": ""
+    },
+    {
+     "name": "Chris Junga",
+     "party": ""
+    }
+   ],
+   "term": "Term begins 02/09/2027"
+  },
+  {
+   "office": "County Auditor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Michael Stinziano",
+     "party": "Democratic"
+    }
+   ],
+   "term": "Full Term"
+  },
+  {
+   "office": "County Commissioner",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Erica C. Crawley",
+     "party": "Democratic"
+    },
+    {
+     "name": "Eric Terford",
+     "party": "Libertarian"
+    }
+   ],
+   "term": "Term begins 01/01/2027"
+  }
+ ],
+ "measures": [],
+ "retention": [],
+ "fips": "39049",
+ "built": "2026-10-24"
+}

@@ -12,6 +12,11 @@
 - **Modifications:** two crops (1:1 desktop, 3:2 mobile), resized to 480/960/1600 px wide, re-encoded as AVIF/WebP/JPEG (`python3 scripts/gen-hero.py`, verifies the SHA-1). Navy gradient overlay and compass-star accent are added in CSS/SVG, not baked into the files.
 - **Shown at:** home page hero caption, About & Sources -> "Photo credit".
 
+## Election results data (v6)
+- **MIT Election Data + Science Lab (MEDSL)**, official precinct-level returns for 2022 and 2024, released under CC0 (https://electionlab.mit.edu/data; https://github.com/MEDSL/2022-elections-official, https://github.com/MEDSL/2024-elections-official). Aggregated by `scripts/build-results.py` into `data/results/`. Citation: MIT Election Data and Science Lab, U.S. elections official returns.
+- County candidate lists (Salt Lake, Cache, Washington, Utah, Weber, Franklin OH, Laramie WY): public records of the county election offices, linked per file in `data/county/`. Utah retention links go to the Utah Judicial Performance Evaluation Commission.
+- Ballotpedia text remains CC BY-NC-SA 3.0 (unchanged).
+
 ## Other
 - Logo / brand art: Justin Taylor (`brand/logo-approved.jpg`), used as approved.
 - Fonts: Montserrat and Atkinson Hyperlegible (SIL Open Font License), self-hosted in `public/fonts/`.

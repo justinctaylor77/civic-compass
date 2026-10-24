@@ -1,0 +1,206 @@
+{
+ "county": "Weber County",
+ "state": "UT",
+ "asOf": "2026-10-24",
+ "sources": [
+  {
+   "label": "Weber County Elections Office — 2026 List of Candidates",
+   "url": "https://www.weberelections.gov/listofcandidates",
+   "kind": "official"
+  }
+ ],
+ "offices": [
+  {
+   "office": "County Commission Seat A",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Gary C. New",
+     "party": ""
+    },
+    {
+     "name": "Alvin Thurgood",
+     "party": ""
+    },
+    {
+     "name": "Duane D Kearsley",
+     "party": ""
+    }
+   ],
+   "out": [
+    "Katrina C. Gibson (out in primary)",
+    "James Ebert (out in primary)",
+    "Michelle Tait (out in convention)",
+    "Richard Hyer (out in primary)"
+   ]
+  },
+  {
+   "office": "County Commission Seat B",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Jon D. Beesley",
+     "party": ""
+    }
+   ],
+   "out": [
+    "Michael N. Thomas (out in convention)",
+    "Sharon Arrington Bolos (out in primary)"
+   ]
+  },
+  {
+   "office": "County Attorney",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Chris F Allred",
+     "party": ""
+    }
+   ]
+  },
+  {
+   "office": "County Clerk/Auditor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Ricky Hatch",
+     "party": ""
+    }
+   ]
+  },
+  {
+   "office": "County Sheriff",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Ryan Arbon",
+     "party": ""
+    }
+   ]
+  },
+  {
+   "office": "County Assessor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Jared L. Preisler",
+     "party": ""
+    }
+   ]
+  },
+  {
+   "office": "Ogden School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Stacy Bernal",
+     "party": ""
+    }
+   ],
+   "area": "Ogden School District"
+  },
+  {
+   "office": "Ogden School District board, District 4",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Amber Allred",
+     "party": ""
+    }
+   ],
+   "out": [
+    "Kari Harbath (withdrew)"
+   ],
+   "area": "Ogden School District"
+  },
+  {
+   "office": "Ogden School District board, District 6",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jamie Nunley",
+     "party": ""
+    },
+    {
+     "name": "Zach Thomas",
+     "party": ""
+    }
+   ],
+   "area": "Ogden School District"
+  },
+  {
+   "office": "Ogden School District board, District 7",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Oscar L. Mata",
+     "party": ""
+    }
+   ],
+   "area": "Ogden School District"
+  },
+  {
+   "office": "Weber School District board, District 1",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Kelly Larson",
+     "party": ""
+    }
+   ],
+   "out": [
+    "Crystal M Stander (withdrew)"
+   ],
+   "area": "Weber School District"
+  },
+  {
+   "office": "Weber School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jan Burrell",
+     "party": ""
+    },
+    {
+     "name": "Jodi B Kennedy",
+     "party": ""
+    }
+   ],
+   "area": "Weber School District"
+  },
+  {
+   "office": "Weber School District board, District 3",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Katie Wahlquist",
+     "party": ""
+    }
+   ],
+   "out": [
+    "Bruce D. Jardine (withdrew)"
+   ],
+   "area": "Weber School District",
+   "note": "Write-in: Write-In* declared on 6/2/26"
+  },
+  {
+   "office": "Weber School District board, District 6",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Karen L Miller",
+     "party": ""
+    }
+   ],
+   "out": [
+    "Robert D. Petersen (withdrew)",
+    "Janis Christensen (withdrew)"
+   ],
+   "area": "Weber School District"
+  }
+ ],
+ "measures": [],
+ "retention": [],
+ "fips": "49057",
+ "built": "2026-10-24"
+}

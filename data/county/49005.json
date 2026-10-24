@@ -1,0 +1,284 @@
+{
+ "county": "Cache County",
+ "state": "UT",
+ "asOf": "2026-08-31",
+ "sources": [
+  {
+   "label": "Cache County Clerk — 2026 Regular General Election Certification (Aug 31, 2026)",
+   "url": "https://www.cachecounty.gov/assets/department/clerk/elections/ElectionNotices/2026/General/Cache_County_2026_General_Election_Certification_Final2.pdf",
+   "kind": "official"
+  }
+ ],
+ "offices": [
+  {
+   "office": "County Attorney",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "J. Brett Chambers",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Auditor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Matthew Funk",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Clerk",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "David R. Gillie",
+     "party": "Constitution"
+    },
+    {
+     "name": "Bryson J. Behm",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Executive/Surveyor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "N. George Daines",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Sheriff",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "D. Chad Jensen",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Council - Logan District 2 (two-year term)",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Allison E. Goulais",
+     "party": "Democratic"
+    },
+    {
+     "name": "Joann Bennett",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Council - Logan District 3",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Sandi R. Goodlander",
+     "party": "Republican"
+    },
+    {
+     "name": "Mark A. Nafziger",
+     "party": "Democratic"
+    }
+   ]
+  },
+  {
+   "office": "County Council - Northeast District 5",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Lizette Villegas",
+     "party": "Democratic"
+    },
+    {
+     "name": "Mark R. Hurd",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "County Council - Southeast District 7",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Peter Thatcher",
+     "party": "Constitution"
+    },
+    {
+     "name": "Kathryn A. Beus",
+     "party": "Republican"
+    }
+   ]
+  },
+  {
+   "office": "Cache County School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Roger Pulsipher",
+     "party": ""
+    },
+    {
+     "name": "Aaron C. Ritchey",
+     "party": ""
+    }
+   ],
+   "area": "Cache County School District"
+  },
+  {
+   "office": "Cache County School District board, District 4",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Randall T. Bagley",
+     "party": ""
+    },
+    {
+     "name": "Deidra Hartwell",
+     "party": ""
+    }
+   ],
+   "area": "Cache County School District"
+  },
+  {
+   "office": "Cache County School District board, District 7",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Teri Rhodes",
+     "party": ""
+    },
+    {
+     "name": "Mylind Fawcett",
+     "party": ""
+    }
+   ],
+   "area": "Cache County School District"
+  },
+  {
+   "office": "Logan City School District board, District 3",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Russell Fisher",
+     "party": ""
+    }
+   ],
+   "area": "Logan City School District"
+  },
+  {
+   "office": "Logan City School District board, District 5",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Cole Checketts",
+     "party": ""
+    },
+    {
+     "name": "Karlee Fryer",
+     "party": ""
+    }
+   ],
+   "area": "Logan City School District"
+  },
+  {
+   "office": "Cache Water District Board - At Large",
+   "level": "special",
+   "candidates": [
+    {
+     "name": "Scott Mershon",
+     "party": ""
+    },
+    {
+     "name": "Kirt Lindley",
+     "party": ""
+    }
+   ],
+   "area": "Cache Water District"
+  },
+  {
+   "office": "Cache Water District Board - Logan 3",
+   "level": "special",
+   "candidates": [
+    {
+     "name": "Alanna Nafziger",
+     "party": ""
+    },
+    {
+     "name": "Mark A Anderson",
+     "party": ""
+    }
+   ],
+   "area": "Cache Water District"
+  },
+  {
+   "office": "Cache Water District Board - Northeast District 5",
+   "level": "special",
+   "candidates": [
+    {
+     "name": "Burdette Barker",
+     "party": ""
+    }
+   ],
+   "area": "Cache Water District"
+  },
+  {
+   "office": "Cache Water District Board - South 6",
+   "level": "special",
+   "candidates": [
+    {
+     "name": "Scott H Clark",
+     "party": ""
+    }
+   ],
+   "area": "Cache Water District"
+  },
+  {
+   "office": "Cache Water District Board - Southeast District 7",
+   "level": "special",
+   "candidates": [
+    {
+     "name": "Bethany Neilson",
+     "party": ""
+    }
+   ],
+   "area": "Cache Water District"
+  }
+ ],
+ "measures": [
+  {
+   "title": "Providence City — non-binding ballot question #1",
+   "area": "Providence",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "text": "As the County Library is closing, should Providence City consider imposing a new property tax levy to fund a city public library and all related library services, which is estimated to cost the owner of a primary residence with a fair market value of $500,000 approximately $55.30 per year?",
+   "binding": false
+  }
+ ],
+ "retention": [
+  {
+   "court": "First Judicial District — Juvenile Court",
+   "judge": "Kirk Max Morgan",
+   "area": null
+  },
+  {
+   "court": "Wellsville Justice Court",
+   "judge": "Matthew David Lorz",
+   "area": "Wellsville"
+  }
+ ],
+ "fips": "49005",
+ "built": "2026-10-24"
+}

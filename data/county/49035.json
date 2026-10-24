@@ -1,0 +1,381 @@
+{
+ "county": "Salt Lake County",
+ "state": "UT",
+ "asOf": "2026-10-24",
+ "sources": [
+  {
+   "label": "Salt Lake County Clerk — 2026 Candidates for Office",
+   "url": "https://www.saltlakecounty.gov/clerk/elections/current-candidate-list/",
+   "kind": "official"
+  },
+  {
+   "label": "Salt Lake County Clerk candidate data feed (public JSON behind that page)",
+   "url": "https://apps.saltlakecounty.gov/services/cl/cl-candidate-reporting-service/api/v1/CandidateReporting/GetCandidateJson",
+   "kind": "official"
+  }
+ ],
+ "offices": [
+  {
+   "office": "County Auditor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Ali Cloward",
+     "party": "Democratic"
+    },
+    {
+     "name": "Chris Harding",
+     "party": "Republican",
+     "web": "https://chris4auditor.com"
+    }
+   ]
+  },
+  {
+   "office": "County Clerk",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Lannie Chapman",
+     "party": "Democratic",
+     "web": "https://lannieforclerk.com"
+    }
+   ]
+  },
+  {
+   "office": "County Council At-Large A",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Gregory Beglarian",
+     "party": "Constitution"
+    },
+    {
+     "name": "Kathleen Anderson",
+     "party": "Republican"
+    },
+    {
+     "name": "Zach Robinson",
+     "party": "Democratic",
+     "web": "https://zachforcouncil.com"
+    }
+   ]
+  },
+  {
+   "office": "County Council District 1",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Casey Poe",
+     "party": "Libertarian"
+    },
+    {
+     "name": "Jiro Johnson",
+     "party": "Democratic",
+     "web": "https://jiroforsaltlake.com"
+    }
+   ]
+  },
+  {
+   "office": "County Council District 3",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Luke Maynes",
+     "party": "Democratic",
+     "web": "https://lukeforcountycouncil.com"
+    },
+    {
+     "name": "Mike Bird",
+     "party": "Republican",
+     "web": "https://www.electmikebird.com"
+    }
+   ]
+  },
+  {
+   "office": "County Council District 5",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Traci Crockett",
+     "party": "Republican"
+    },
+    {
+     "name": "Sara Cimmers",
+     "party": "Democratic"
+    }
+   ]
+  },
+  {
+   "office": "County District Attorney",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Sim Gill",
+     "party": "Democratic",
+     "web": "https://votesim.com"
+    },
+    {
+     "name": "Kent Davis",
+     "party": "Republican",
+     "web": "https://kentfdavis.com"
+    }
+   ]
+  },
+  {
+   "office": "County Sheriff",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Shane Manwaring",
+     "party": "Republican",
+     "web": "https://shane4sheriff.com"
+    },
+    {
+     "name": "Rosie Rivera",
+     "party": "Democratic",
+     "web": "https://rosieforsheriff.com"
+    }
+   ]
+  },
+  {
+   "office": "Canyons School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Amber Shill",
+     "party": "",
+     "web": "https://electamber.com"
+    }
+   ],
+   "area": "Canyons School District"
+  },
+  {
+   "office": "Canyons School District board, District 4",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Andrew Edtl",
+     "party": "",
+     "web": "https://andrewforcanyons.com"
+    }
+   ],
+   "area": "Canyons School District"
+  },
+  {
+   "office": "Canyons School District board, District 5",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Karen Pedersen",
+     "party": "",
+     "web": "https://karen4canyons.com"
+    },
+    {
+     "name": "Dennis Lagodimos",
+     "party": ""
+    }
+   ],
+   "area": "Canyons School District"
+  },
+  {
+   "office": "Canyons School District board, District 6",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Amanda Oaks",
+     "party": "",
+     "web": "https://oaks4canyons.com"
+    }
+   ],
+   "area": "Canyons School District"
+  },
+  {
+   "office": "Granite School District board, District 3",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Amber Stone",
+     "party": ""
+    }
+   ],
+   "area": "Granite School District"
+  },
+  {
+   "office": "Granite School District board, District 5",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Aimee Warren",
+     "party": "",
+     "web": "https://aimeeforgranite.com"
+    }
+   ],
+   "area": "Granite School District",
+   "note": "Declared write-in: Dylanger McKissen"
+  },
+  {
+   "office": "Granite School District board, District 6",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jay Blain",
+     "party": ""
+    },
+    {
+     "name": "Michelle Steenblik",
+     "party": ""
+    }
+   ],
+   "area": "Granite School District"
+  },
+  {
+   "office": "Granite School District board, District 7",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Kris Nguyen",
+     "party": ""
+    }
+   ],
+   "area": "Granite School District"
+  },
+  {
+   "office": "Jordan School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jeffrey Enquist",
+     "party": ""
+    },
+    {
+     "name": "Brian Barnett",
+     "party": ""
+    }
+   ],
+   "area": "Jordan School District"
+  },
+  {
+   "office": "Jordan School District board, District 3",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Suzanne Wood",
+     "party": ""
+    }
+   ],
+   "area": "Jordan School District"
+  },
+  {
+   "office": "Jordan School District board, District 7",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Barbie Curtis",
+     "party": ""
+    },
+    {
+     "name": "F Masita Taufahema",
+     "party": ""
+    }
+   ],
+   "area": "Jordan School District"
+  },
+  {
+   "office": "Murray School District board, District 2",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jessica Miller",
+     "party": "",
+     "web": "https://jessica4murray.com"
+    },
+    {
+     "name": "Kami Anderson",
+     "party": ""
+    }
+   ],
+   "area": "Murray School District"
+  },
+  {
+   "office": "Murray School District board, District 3",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jill Weight",
+     "party": ""
+    }
+   ],
+   "area": "Murray School District"
+  },
+  {
+   "office": "Murray School District board, District 4",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Elizabeth Payne",
+     "party": ""
+    }
+   ],
+   "area": "Murray School District"
+  },
+  {
+   "office": "Salt Lake School District board, District 3",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Jared Wright",
+     "party": ""
+    },
+    {
+     "name": "Ashley Anderson",
+     "party": "",
+     "web": "https://ashleyforschoolboard.com"
+    }
+   ],
+   "area": "Salt Lake School District"
+  },
+  {
+   "office": "Salt Lake School District board, District 4",
+   "level": "school",
+   "candidates": [],
+   "area": "Salt Lake School District",
+   "note": "Declared write-in: Amanda Finlayson"
+  },
+  {
+   "office": "Salt Lake School District board, District 5 (2 Year Term)",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "Sandra Buendia",
+     "party": "",
+     "web": "https://sandra4slcschools.com"
+    },
+    {
+     "name": "Annie Romano",
+     "party": ""
+    }
+   ],
+   "area": "Salt Lake School District"
+  },
+  {
+   "office": "Salt Lake School District board, District 6",
+   "level": "school",
+   "candidates": [
+    {
+     "name": "R. Bryan Jensen",
+     "party": "",
+     "web": "https://bryanforschoolboard.com"
+    },
+    {
+     "name": "Jennifer Smith",
+     "party": ""
+    }
+   ],
+   "area": "Salt Lake School District"
+  }
+ ],
+ "measures": [],
+ "retention": [],
+ "fips": "49035",
+ "built": "2026-10-24"
+}

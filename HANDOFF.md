@@ -27,3 +27,11 @@ Never opinions or endorsements; never invent facts; every fact shows its source 
 
 ## Known limitations
 City and county races are thin (Ballotpedia only has a featured county per state plus some county pages); ZIP/city input is approximate; regional judicial/school-board races can't be tied to an address; AllSides snapshot is old and many outlets are unrated; Google Civic, Vote Smart, OpenStates not live.
+
+## v6 (branch design/v6, NOT deployed; Justin must approve first)
+- **Results tab** (`#/results`, `server/results.js`, `GET /api/results`): 2024 + 2022 general-election results for the user's state / county / U.S. House district from MEDSL (CC0), bundled in `data/results/<ST>.json` (50 states + DC). Margins, "most votes" winner, turnout only where the dataset has it, name-matched history for candidates on the user's 2026 ballot, and a live-results panel (`data/live-results.json`: official state result sites, links checked 2026-10-24; honest "will appear after polls close Nov 3" state). No predictions or opinions. Rebuild: `python3 scripts/build-results.py` (downloads MEDSL files; see script header).
+- **County/city** (`server/county.js`, `data/county/<FIPS>.json`, `data/state/<ST>.json`, `scripts/build-county.py`): official county candidate lists for Salt Lake, Cache, Washington, Utah, Weber (UT), Franklin (OH), Laramie (WY); statewide Utah judicial retention (links to Know Your Judges); Utah and Ohio "no city election in 2026" notes (statute-cited); address-dependent seats (council/school districts) flagged, not guessed. Counties without a file fall back to Ballotpedia, then "Limited data available". Ballotpedia snapshots for UT/OH/WY were not refreshed in v6.
+- UI: new `.tabs` nav (Find my ballot / Results / About & Sources), home feature card, ballot "Past results for this area" button. Cache bumped to `cc-v6`, `?v=6`.
+- Screenshots: `node scripts/screenshots-v6.js` -> screenshots/v6/.
+- Gaps: no address -> council/school-district resolver; no roll-call vote history (needs a congress.gov key or Vote Smart); results county drill-down only via ZIP/city/address lookup; Wyoming city offices not claimed; MEDSL UT 2022 statewide is thin; Slco feed is undocumented.
+- Deploy only after Justin approves: merge to main, then Render trigger_deploy and check `/sw.js` shows cc-v6.

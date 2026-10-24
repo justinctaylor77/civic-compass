@@ -1,0 +1,178 @@
+{
+ "county": "Laramie County",
+ "state": "WY",
+ "asOf": "2026-10-01",
+ "sources": [
+  {
+   "label": "Laramie County Clerk — 2026 General Election sample ballot (precinct 5-01; county-wide offices are the same in every precinct)",
+   "url": "https://maps.laramiecounty.com/ClerkDocs/SampleBallots/2026/General/5-1.pdf",
+   "kind": "official"
+  },
+  {
+   "label": "Laramie County Clerk — Elections & candidates",
+   "url": "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Elections/Candidates",
+   "kind": "official"
+  }
+ ],
+ "offices": [
+  {
+   "office": "County Commissioner",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Troy Thompson",
+     "party": "Republican"
+    },
+    {
+     "name": "Jess E. Ketcham",
+     "party": "Republican"
+    },
+    {
+     "name": "Gunnar Malm",
+     "party": "Republican"
+    },
+    {
+     "name": "Barbara Cabot",
+     "party": "Democratic"
+    },
+    {
+     "name": "Lynne K. Davis",
+     "party": "Democratic"
+    }
+   ],
+   "seats": 3,
+   "term": "Four-year term",
+   "note": "Vote for up to three"
+  },
+  {
+   "office": "County Sheriff",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Brian Kozak",
+     "party": "Republican"
+    },
+    {
+     "name": "Robin Cozad",
+     "party": "Democratic"
+    }
+   ],
+   "term": "Four-year term"
+  },
+  {
+   "office": "County Clerk",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Misty Tinney",
+     "party": "Republican"
+    }
+   ],
+   "term": "Four-year term"
+  },
+  {
+   "office": "County Treasurer",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Trista Wood",
+     "party": "Republican"
+    }
+   ],
+   "term": "Four-year term"
+  },
+  {
+   "office": "County Assessor",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Todd A. Ernst",
+     "party": "Republican"
+    }
+   ],
+   "term": "Four-year term"
+  },
+  {
+   "office": "Clerk of District Court",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Diane Sanchez",
+     "party": "Republican"
+    }
+   ],
+   "term": "Four-year term"
+  },
+  {
+   "office": "County Coroner",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Rebecca Reid",
+     "party": "Republican"
+    }
+   ],
+   "term": "Four-year term"
+  },
+  {
+   "office": "District Attorney",
+   "level": "county",
+   "candidates": [
+    {
+     "name": "Sylvia Lee Hackl",
+     "party": "Republican"
+    }
+   ],
+   "term": "Four-year term"
+  }
+ ],
+ "measures": [
+  {
+   "title": "Laramie County — 1% sales and use tax renewal",
+   "area": null,
+   "options": [
+    "For the tax",
+    "Against the tax"
+   ],
+   "text": "Shall the Laramie County Commissioners be authorized to renew a one percent (1%) sales and use tax within the county as authorized by W.S. 39-15-204; the revenue to be used as general revenue?"
+  },
+  {
+   "title": "Laramie County — lodging tax renewal",
+   "area": null,
+   "options": [
+    "For the tax",
+    "Against the tax"
+   ],
+   "text": "Shall Laramie County be authorized to renew a lodging tax at a rate of two percent (2%) upon the sales price paid for sleeping accommodations for guests in hotels, motels, tourist courts, trailer parks, campgrounds, dude ranches, short-term condominiums and similar establishments?"
+  }
+ ],
+ "retention": [
+  {
+   "court": "Wyoming Supreme Court",
+   "judge": "Robert C. Jarosh",
+   "area": null
+  },
+  {
+   "court": "Wyoming Supreme Court",
+   "judge": "Bridget Hill",
+   "area": null
+  },
+  {
+   "court": "First Judicial District Court, Judge A",
+   "judge": "Robin S. Cooley",
+   "area": null
+  },
+  {
+   "court": "First Judicial District Court, Judge B",
+   "judge": "Nathaniel S. Hibben",
+   "area": null
+  },
+  {
+   "court": "Chancery Court",
+   "judge": "Ben Burningham",
+   "area": null
+  }
+ ],
+ "fips": "56021",
+ "built": "2026-10-24"
+}
