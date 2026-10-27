@@ -14,8 +14,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png?v=2">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v=2">
+<script>try{var d=document.documentElement,z=localStorage.getItem('cc-size'),c=localStorage.getItem('cc-contrast');d.dataset.size=/^[123]$/.test(z)?z:'1';d.dataset.contrast=(c==null?(window.matchMedia&&matchMedia('(prefers-contrast: more)').matches):c==='1')?'high':'normal'}catch(e){}</script>
 <link rel="preload" href="/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=6">
+<link rel="stylesheet" href="/styles.css?v=7">
 </head>
 <body>
 <a class="skip" href="#main">Skip to the main content</a>
@@ -25,22 +26,25 @@
       <img src="/icons/mark-192.png?v=2" alt="" width="64" height="61">
       <span class="brand-text"><span class="brand-name">CIVIC COMPASS</span><span class="brand-tag">Know your ballot. Know your choices.</span></span>
     </a>
-    <nav class="tools" aria-label="Page tools">
-      <div class="size" role="group" aria-label="Text size">
-        <button type="button" data-size="1" aria-label="Normal text size" title="Normal text">A</button>
-        <button type="button" data-size="2" aria-label="Large text size" title="Large text">A</button>
-        <button type="button" data-size="3" aria-label="Extra large text size" title="Extra large text">A</button>
-      </div>
-    </nav>
   </div>
-  <nav class="tabs" aria-label="Main sections"><a href="#/" data-tab="ballot">Find my ballot</a><a href="#/results" data-tab="results">Results</a><a href="#/about" data-tab="about">About &amp; Sources</a></nav>
+  <div class="a11y-bar" role="region" aria-label="Reading settings">
+    <div class="size" role="group" aria-label="Text size">
+      <span class="bar-label" id="size-label">Text size</span>
+      <button type="button" data-size="1" class="s1" aria-label="Large text (the usual size)" aria-pressed="true">A</button>
+      <button type="button" data-size="2" class="s2" aria-label="Larger text" aria-pressed="false">A+</button>
+      <button type="button" data-size="3" class="s3" aria-label="Largest text" aria-pressed="false">A++</button>
+    </div>
+    <button type="button" class="hc" id="hc" aria-pressed="false"><span aria-hidden="true">◐</span> High contrast: <span class="hc-state">Off</span></button>
+  </div>
+  <nav class="tabs" aria-label="Main sections"><a href="#/" data-tab="ballot">Find my ballot</a><a href="#/choices" data-tab="choices">My choices</a><a href="#/election-day" data-tab="election-day">Election Day help</a><a href="#/results" data-tab="results">Past results</a><a href="#/about" data-tab="about">About &amp; Sources</a></nav>
   <div class="flagband" aria-hidden="true"></div>
 </header>
 <main id="main" tabindex="-1"></main>
+<div id="announce" class="sr" role="status" aria-live="polite"></div>
 <footer class="foot">
   <div class="flagband" aria-hidden="true"></div>
   <div class="foot-inner" id="foot"></div>
 </footer>
-<script src="/app.js?v=6"></script>
+<script src="/app.js?v=7"></script>
 </body>
 </html>

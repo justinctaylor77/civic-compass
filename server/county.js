@@ -56,8 +56,8 @@ function apply(loc, out, src) {
     out.county.races = [...mine, ...keepBp];
     out.county.otherLocal = [...(other.length ? other : []), ...(out.county.otherLocal || []).filter((g) => !other.some((o) => norm(o.office) === norm(g.office)) && !mine.some((m) => norm(m.office) === norm(g.office)))];
     out.county.notes = out.county.notes.filter((n) => !/^Limited data available/.test(n) && !/^Ballotpedia also lists/.test(n));
-    if (other.length) out.county.notes.push(`Also certified in ${doc.county}: ${other.length} school-board and special-district races for other districts. We can't tell from a ZIP code which are on your ballot, so they are in the box below.`);
-    if (mine.some((r) => r.addressDependent)) out.county.notes.push('Seats marked "depends on your address" belong to a numbered district inside your county or school district. Your exact district comes from your street address; your county clerk\'s sample ballot shows it.');
+    if (other.length) out.county.notes.push(`${doc.county} also lists ${other.length} school board and special district races for other areas. A ZIP code cannot tell us which are on your ballot, so they are in the box below.`);
+    if (mine.some((r) => r.addressDependent)) out.county.notes.push('Seats marked "depends on your address" are for a numbered area inside your county or school district. Your street address tells us which one. Your county clerk\'s sample ballot also shows it.');
     out.county.status = 'ok';
     out.county.measures = (doc.measures || []).filter((m) => !m.area).map((m) => ({ ...m }));
     out.county.retention = [...(doc.retention || []).filter((r) => !r.area), ...((stateDoc && stateDoc.retention) || []).map((r) => ({ ...r, statewide: true }))];
@@ -69,8 +69,8 @@ function apply(loc, out, src) {
     if (cityM.length || cityR.length) { out.city.status = 'ok'; out.city.notes = out.city.notes.filter((n) => !/^Limited data/.test(n)); }
     if (otherCity.length) out.city.notes.push(`${doc.county}'s certification also lists local ballot questions for ${[...new Set(otherCity)].join(', ')} — not your city, so not shown.`);
     out.county.coverage = { official: true, bpDropped };
-    if (doc.state === 'UT' && doc.fips === '49035') out.county.notes.push('Salt Lake County\'s candidate list comes from the County Clerk\'s public candidate feed. It lists candidates only; for ballot questions and judges on your ballot see vote.utah.gov or your sample ballot.');
-    if (doc.fips === '49057') out.county.notes.push('Weber County\'s published list does not show party and includes candidates the county marks as out in a primary or convention; those are shown separately as "not on the general-election ballot". Please confirm names with the Weber County Elections Office.');
+    if (doc.state === 'UT' && doc.fips === '49035') out.county.notes.push('This list comes from the Salt Lake County Clerk\'s public candidate list. It shows candidates only. For ballot questions and judges, see vote.utah.gov or your sample ballot.');
+    if (doc.fips === '49057') out.county.notes.push('Weber County\'s list does not show party. It also names some people the county marks as out after a primary or convention. We show those separately as "not on the November ballot." Please check names with the Weber County Elections Office.');
   } else if (stateDoc && stateDoc.retention && out.county.status !== 'unavailable') {
     out.county.retention = stateDoc.retention.map((r) => ({ ...r, statewide: true }));
   }
@@ -82,10 +82,10 @@ function apply(loc, out, src) {
     const had = out.city.races.length;
     if (!had && !(out.city.measures && out.city.measures.length)) {
       out.city.status = 'none';
-      out.city.notes = [`No city election in 2026${placeName ? ' for ' + placeName : ''}. ${odd.label} cities elect their mayors and councils only in odd-numbered years (${odd.cite}), so there is no mayor or council race on this year's ballot. The next city elections are in 2027.`];
+      out.city.notes = [`No city election in 2026${placeName ? ' for ' + placeName : ''}. ${odd.label} cities pick their mayors and city councils only in odd-numbered years (${odd.cite}). So there is no mayor or city council race on this year's ballot. The next city elections are in 2027.`];
       out.city.noteSource = { label: odd.cite, url: odd.url };
     } else if (!had) {
-      out.city.notes.unshift(`${odd.label} cities elect their mayors and councils only in odd-numbered years (${odd.cite}), so there is no mayor or council race this year. Local ballot questions are shown below.`);
+      out.city.notes.unshift(`${odd.label} cities pick their mayors and city councils only in odd-numbered years (${odd.cite}). So there is no mayor or city council race this year. Local ballot questions are shown below.`);
       out.city.noteSource = { label: odd.cite, url: odd.url };
     }
   }

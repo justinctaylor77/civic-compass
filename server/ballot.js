@@ -48,9 +48,9 @@ async function buildBallot(loc) {
     else if (loc.cd) house = fed.filter((r) => new RegExp(`^U\\.S\\. House .*District ${loc.cd.number}$`).test(r.office));
     else house = [];
     out.federal.races.push(...groupRaces(senate, 'federal', { chamber: 'sen' }), ...groupRaces(house, 'federal', { chamber: 'rep' }));
-    if (!senate.length) out.federal.notes.push(`There is no U.S. Senate race in ${stateName} this year (each state elects its senators in different years).`);
-    if (!house.length) out.federal.notes.push('We could not match your congressional district to a race on Ballotpedia. Use the official links below.');
-    if (loc.cd && !loc.cd.atLarge) out.federal.notes.push(`Your U.S. House district: ${loc.cd.label}, from the U.S. Census Bureau's ${loc.cd.vintage || 'current congressional district map'}.`);
+    if (!senate.length) out.federal.notes.push(`There is no U.S. Senate race in ${stateName} this year. Each state votes for its senators in different years.`);
+    if (!house.length) out.federal.notes.push('We could not find your U.S. House race. Please use the official links at the bottom of this page.');
+    if (loc.cd && !loc.cd.atLarge) out.federal.notes.push(`Your U.S. House district is ${loc.cd.label}. This comes from the U.S. Census Bureau map.`);
     // ----- State
     const stateRows = st.state.filter(onB);
     const isLeg = (o) => /District \d+/.test(o) && /(Senate|House|Assembly|Delegates)/.test(o) && !/Court|Board|Commission/.test(o);
@@ -62,13 +62,13 @@ async function buildBallot(loc) {
     const lowerRows = stateRows.filter((r) => isLeg(r.office) && !upper(r.office) && loc.sldl && new RegExp(`District ${esc(loc.sldl.base)}( |$)`).test(r.office));
     out.state.races.push(...groupRaces(upperRows, 'state'), ...groupRaces(lowerRows, 'state'));
     const hasLegRaces = stateRows.some((r) => isLeg(r.office));
-    if (hasLegRaces && !upperRows.length && !lowerRows.length) out.state.notes.push(loc.sldu || loc.sldl ? 'Your state legislative district has no contested race listed on Ballotpedia (the seat may not be up this year), or the district could not be matched.' : 'We could not determine your state legislative districts.');
-    else if (hasLegRaces && !upperRows.length && loc.sldu) out.state.notes.push(`Your ${loc.sldu.label} seat is not up for election in 2026 (or has no listed race).`);
+    if (hasLegRaces && !upperRows.length && !lowerRows.length) out.state.notes.push(loc.sldu || loc.sldl ? 'We did not find a race for your state legislature district. That seat may not be up this year, or we could not match your district.' : 'We could not tell which state legislature districts you live in.');
+    else if (hasLegRaces && !upperRows.length && loc.sldu) out.state.notes.push(`Your ${loc.sldu.label} seat is not up this year, or we found no race for it.`);
     const other = stateRows.filter((r) => !swSet.has(r) && !upperRows.includes(r) && !lowerRows.includes(r) && !isLeg(r.office));
     const otherOffices = [...new Set(other.map((r) => r.office))];
-    if (otherOffices.length) out.state.notes.push(`${otherOffices.length} other regional state races (for example courts of appeals, boards of education) are held in districts we cannot match to an address yet. See the full list on Ballotpedia.`);
+    if (otherOffices.length) out.state.notes.push(`${otherOffices.length} other state races (like some courts and education boards) are for areas we cannot match to an address yet. See the full list on Ballotpedia.`);
     out.state.measures = st.measures.map((m) => ({ ...m }));
-    if (!out.state.measures.length) out.state.notes.push('Ballotpedia lists no statewide ballot measures for this year.');
+    if (!out.state.measures.length) out.state.notes.push('Ballotpedia lists no statewide ballot questions for this year.');
     // ----- County / City
     const countyFull = loc.county && loc.county.name; // e.g. "Salt Lake County"
     const placeName = loc.place && loc.place.name;
@@ -109,11 +109,11 @@ async function buildBallot(loc) {
         addRows(mineC.map((m) => m.r), out.county, 'county'); addRows(mineT.map((m) => m.r), out.city, 'city');
         const have = new Set([...out.county.races, ...out.city.races].map((r) => strip(r.office)));
         out.county.otherLocal = groupRaces(rest, 'county').filter((g) => !have.has(strip(g.office)));
-        if (out.county.otherLocal.length) out.county.notes.push(`Ballotpedia also lists ${out.county.otherLocal.length} other local ${out.county.otherLocal.length === 1 ? 'race' : 'races'} in ${countyFull} (such as school boards in other districts). We cannot tell from a ZIP code whether they are on your ballot, so they are in the box below.`);
+        if (out.county.otherLocal.length) out.county.notes.push(`Ballotpedia also lists ${out.county.otherLocal.length} other local ${out.county.otherLocal.length === 1 ? 'race' : 'races'} in ${countyFull}, such as school boards in other areas. A ZIP code cannot tell us if they are on your ballot, so they are in the box below.`);
       }
-      if (!out.county.races.length) { out.county.status = 'limited'; out.county.notes.unshift(`Limited data available for ${countyFull}: Ballotpedia has no page listing 2026 county races${rowsFromTable.length ? ' (only school-board races for other districts)' : ''}. Your county election office has the complete official list.`); }
-    } else { out.county.status = 'limited'; out.county.notes.push('We could not determine your county.'); }
-    if (!out.city.races.length) { out.city.status = 'limited'; out.city.notes.push(`Limited data available${placeName ? ' for ' + placeName : ''}: no city or town races were found in our sources. Many cities hold their elections in other years, and small-town races often are not published anywhere central. Your city clerk or county election office has the official list.`); }
+      if (!out.county.races.length) { out.county.status = 'limited'; out.county.notes.unshift(`Limited data available for ${countyFull}. Ballotpedia has no page that lists the 2026 county races${rowsFromTable.length ? ' (only school board races for other areas)' : ''}. Your county election office has the full official list.`); }
+    } else { out.county.status = 'limited'; out.county.notes.push('We could not tell which county you live in.'); }
+    if (!out.city.races.length) { out.city.status = 'limited'; out.city.notes.push(`Limited data available${placeName ? ' for ' + placeName : ''}. We found no city or town races. Many cities vote in other years. Small-town races are often not posted in one place. Your city clerk or county election office has the official list.`); }
   } else {
     for (const k of Object.keys(out)) { out[k].status = 'unavailable'; }
   }

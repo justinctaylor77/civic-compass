@@ -11,6 +11,7 @@ const news = require('./news');
 const { scrub } = require('./util');
 const { STATES } = require('./states');
 const results = require('./results');
+const electionday = require('./electionday');
 
 const PORT = process.env.PORT || 3000;
 const ELECTION = { date: '2026-11-03', label: 'Tuesday, November 3, 2026' };
@@ -33,9 +34,12 @@ app.get('/api/ballot', wrap(async (req, res) => {
   const [{ out, sources, warnings }, cv] = await Promise.all([buildBallot(loc), loc.type === 'address' ? civic.voterInfo(q) : Promise.resolve({ enabled: civic.enabled(), skipped: true })]);
   res.json({
     election: ELECTION, location: loc, ballot: out, sources, warnings,
-    civic: cv, generatedAt: new Date().toISOString(),
+    civic: cv, stateInfo: electionday.info(loc.state.abbr), generatedAt: new Date().toISOString(),
   });
 }));
+
+// Election Day help links for one state (?state=UT)
+app.get('/api/election-day', (req, res) => { const i = electionday.info(req.query.state); if (!i) return res.status(404).json({ error: 'Please pick a state.' }); res.json(i); });
 
 // Past results (bundled MEDSL data) + official live-results links. ?state=UT[&county=49049&cd=3] or ?q=<zip/city/address>
 app.get('/api/results', wrap(async (req, res) => {

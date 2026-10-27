@@ -84,10 +84,10 @@ function history(doc, names) {
 }
 
 const CAVEAT = {
-  AK: 'Alaska counts ranked-choice ballots; the numbers shown are first-choice votes as reported in the dataset, which may not decide the winner.',
-  ME: 'Maine uses ranked-choice voting for some contests; the numbers shown are first-choice votes as reported in the dataset.',
-  LA: 'Louisiana has used different election formats (open primaries and runoffs) in different years, so a single November table may not tell the whole story.',
-  GA: 'Georgia holds runoffs for some contests when no one wins a majority; runoff results are not included here.',
+  AK: 'Alaska lets voters rank their choices. The numbers here are first-choice votes only, so they may not show who won.',
+  ME: 'Maine lets voters rank their choices in some races. The numbers here are first-choice votes only.',
+  LA: 'Louisiana has used different election rules in different years. One November table may not tell the whole story.',
+  GA: 'Georgia holds a second election (a runoff) when no one wins more than half the votes. Runoff results are not shown here.',
 };
 
 function view({ state, countyFips, cd, names, countyName }) {
@@ -96,20 +96,20 @@ function view({ state, countyFips, cd, names, countyName }) {
   const doc = load(abbr);
   const live = LIVE.states[abbr] || {};
   const caveats = [
-    'Only November general elections are shown (not primaries, runoffs or special elections). “Winner” means the candidate with the most votes in the data; the result was certified by the state.',
-    'District lines can change between elections (for example after redistricting). U.S. House results are for the district numbers used in that year, which may cover different areas than the district you vote in today.',
-    'In some contests the source lists a governor and running mate (or other ticket) as one line. Names appear exactly as the source reports them.',
-    'Percentages are each candidate’s share of all votes cast in that contest, rounded to one decimal. Some contests list only the top candidates; the rest appear as “other candidates”.',
+    'We show only the big November elections. We do not show primaries, runoffs, or special elections. “Most votes” means the person with the most votes. The state made the results official.',
+    'District borders can change between elections. U.S. House results are for the district number used that year. It may cover different places than your district does today.',
+    'In some races, a governor and running mate are shown on one line. Names are shown exactly as the source lists them.',
+    'A percentage is the share of all votes in that race that one person got. Some races list only the top people. The rest are grouped as “other candidates”.',
   ];
   if (CAVEAT[abbr]) caveats.push(CAVEAT[abbr]);
-  if (abbr === 'UT') caveats.push('Utah’s U.S. House districts were redrawn for the 2026 elections, so district numbers in the 2024 and 2022 results below may cover different areas than they do today.');
+  if (abbr === 'UT') caveats.push('Utah’s U.S. House districts were redrawn for 2026. District numbers in the 2024 and 2022 results below may cover different places than they do today.');
   const out = {
     state: { abbr, name: STATES[abbr] },
     years: { 2024: yearView(doc, '2024', { countyFips, cd, countyName }), 2022: yearView(doc, '2022', { countyFips, cd, countyName }) },
     live: {
-      pollsClose: 'Polls close Tuesday, November 3, 2026 (times vary by state and time zone).',
+      pollsClose: 'Polls close on Tuesday, November 3, 2026. The time is different in each state.',
       results: live.results || null, office: live.office || null, note: live.officeNote || null, checkedOn: LIVE.checkedOn,
-      explain: 'Until then, the official state links below are where results will be posted first. Early numbers are unofficial and change as ballots are counted; official results are certified days or weeks later.',
+      explain: 'Until then, the official state links below are where results will be posted first. Early numbers are not official and change as ballots are counted. Official results can take days or weeks.',
     },
     caveats, snapshot: doc && doc.built || null,
     generatedAt: new Date().toISOString(),

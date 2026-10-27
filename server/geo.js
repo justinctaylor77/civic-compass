@@ -91,8 +91,8 @@ async function resolve(raw) {
       cityName = p.type === 'city' ? p.city : pl['place name'];
       geo = await censusByCoords(lat, lon);
       precision = p.type === 'zip' ? 'zip' : 'city';
-      if (p.type === 'city') notes.push(`Races shown are for the center of ${p.city}. Large cities can contain several districts, so for the exact ballot please type your ZIP code or street address.`);
-      else notes.push('A ZIP code can cross city, county, and district lines. These results use the center of the ZIP code. For the exact list for your home, type your full street address.');
+      if (p.type === 'city') notes.push(`These races are for the middle of ${p.city}. Big cities have more than one district. For your exact ballot, type your ZIP code or street address.`);
+      else notes.push('One ZIP code can cover more than one city, county, or district. We used the middle of your ZIP code. For the exact list for your home, type your full street address.');
     }
     if (!geo.state || !geo.state.abbr) throw Object.assign(new Error('That location did not match a U.S. state.'), { status: 404 });
     return { input: String(raw).trim(), type: p.type, precision, zip: zip || null, cityName, lat, lon, ...geo, stateName: STATES[geo.state.abbr], notes };
