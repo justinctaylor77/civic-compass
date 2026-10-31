@@ -211,7 +211,7 @@ function homeView() {
   setTitle('');
   const saved = store.get('cc-last') || '';
   const d = daysLeft(), n = choiceCount();
-  main.innerHTML = `
+  main.innerHTML = `${electionNightBanner()}
   <section class="hero"><div class="hero-inner">
     <div>
       <span class="eyebrow">${STAR(18)} Election Day · Tuesday, November 3, 2026</span>
@@ -247,9 +247,9 @@ function homeView() {
   </section>
   <section class="wrap feature-wrap" aria-labelledby="feat-h"><a class="feature" href="#/results">
     <span class="feat-ico" aria-hidden="true">${ICON.bars}</span>
-    <span class="feat-txt"><h2 id="feat-h">Past election results</h2>
-    <span class="feat-p">See how the 2024 and 2022 elections turned out where you live. After the polls close on November 3, we show where to find the 2026 results.</span></span>
-    <span class="btn feat-go">Open past results <span aria-hidden="true">›</span></span></a></section>`;
+    <span class="feat-txt"><h2 id="feat-h">Election results</h2>
+    <span class="feat-p">After polls close on November 3, see unofficial 2026 results from official election websites. You can also see how the 2024 and 2022 elections turned out where you live.</span></span>
+    <span class="btn feat-go">Open results <span aria-hidden="true">›</span></span></a></section>`;
   footer();
   $('#f').addEventListener('submit', (e) => { e.preventDefault(); const q = $('#q').value.trim(); if (q) location.hash = '#/ballot?q=' + encodeURIComponent(q); });
   focusTop();
@@ -522,25 +522,120 @@ function historyPanel(r, q) {
   h += `<p class="src">Source: ${link(r.years['2024'].source ? r.years['2024'].source.repo : 'https://electionlab.mit.edu/data', 'MEDSL official returns')} (2024 and 2022) · snapshot retrieved ${esc(fmtDate((r.snapshot || '') + 'T12:00:00'))}; the 2026 candidate list comes from the ballot page sources.</p></section>`;
   return h;
 }
+/* ---------- v8 live results (official feeds only; shared server cache) ---------- */
+let liveTimers = [];
+function stopLive() { liveTimers.forEach((t) => clearInterval(t)); liveTimers = []; }
+const LIVE_SECT = [['federal', 'Federal'], ['state', 'State'], ['county', 'County'], ['city', 'City']];
+function untilText(ms) {
+  if (ms <= 0) return 'any minute now';
+  const m = Math.floor(ms / 60000), d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mm = m % 60;
+  const p = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+  return d ? `${p(d, 'day')}, ${p(h, 'hour')}` : h ? `${p(h, 'hour')}, ${p(mm, 'minute')}` : p(Math.max(1, mm), 'minute');
+}
+function liveRaceHTML(c, L) {
+  const src = c.source || {};
+  const stamp = c.official
+    ? `<b>Official final results</b> (the official site marks them certified)`
+    : `<b>Unofficial results</b>`;
+  const when = c.asOfText ? `last updated ${esc(c.asOfText)}${c.asOfDate && L.testMode ? ', ' + esc(c.asOfDate) : ''}` : 'update time not given';
+  const rep = c.reporting ? `<p class="lr-rep">${num(c.reporting.reported)} of ${num(c.reporting.total)} ${esc(c.reporting.unit)} have reported (${c.reporting.pct == null ? '—' : c.reporting.pct}%)</p>` : '';
+  const rows = c.candidates.map((x) => `<tr${x.leading || x.final ? ' class="lr-top"' : ''}><th scope="row">${esc(x.name)}${x.leading ? ' <span class="lr-badge">Leading</span>' : ''}${x.final ? ' <span class="lr-badge fin">Most votes — official</span>' : ''}${x.writeIn ? ' <span class="note">(write-in)</span>' : ''}</th><td>${esc(x.party || '—')}</td><td class="n">${num(x.votes)}</td><td class="n">${x.pct == null ? '—' : x.pct.toFixed(1) + '%'}<span class="lr-bar" aria-hidden="true"><i style="width:${Math.min(100, x.pct || 0)}%"></i></span></td></tr>`).join('');
+  return `<article class="lrace"><h4>${esc(c.name)}${c.seats > 1 ? ` <span class="note">(vote for ${c.seats})</span>` : ''}</h4>
+  <p class="lr-stamp">${stamp}, ${when} from ${link(src.url, src.label || 'the official results site')}</p>${rep}
+  ${c.totalVotes ? `<div class="lr-scroll"><table class="lr-table"><thead><tr><th scope="col">Candidate or choice</th><th scope="col">Party</th><th scope="col" class="n">Votes</th><th scope="col" class="n">Percent</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="lr-zero">No votes counted yet. Choices: ${c.candidates.map((x) => esc(x.name) + (x.party ? ' (' + esc(x.party) + ')' : '')).join(', ')}.</p>`}</article>`;
+}
+function liveLinks(L) {
+  const s = L.state.name;
+  return `<ul class="officials">${(L.feedsForPlace || []).map((f) => `<li>${link(f.url, f.label)}</li>`).join('')}
+  ${L.links.results ? `<li>${link(L.links.results, s + '’s official election-results website')}</li>` : ''}
+  ${L.links.office ? `<li>${link(L.links.office, s + ' election office')}${L.links.officeNote ? `<br><span class="note">${esc(L.links.officeNote)}</span>` : ''}</li>` : ''}
+  <li>${link(L.links.usa, 'USA.gov: find any state’s election office')}</li></ul>`;
+}
+function liveBody(L) {
+  const s = L.state.name;
+  const plain = `<div class="lr-plain"><h3>Good to know</h3><ul>
+    <li>The first numbers are early counts. <b>They often change a lot</b> as more ballots are counted.</li>
+    ${L.countNote ? `<li>${esc(L.countNote)}</li>` : ''}
+    <li>“Leading” only means “has the most votes so far.” We never say who won. The official winner is known only when election officials certify the results.</li></ul></div>`;
+  if (L.status === 'no-feed') return `<div class="live-box"><b>We cannot show live numbers for ${esc(s)}.</b><p>${esc(L.noFeedNote || `We did not find a free, official live-results data feed for ${s} that we can safely use. Please check the official websites below on election night.`)}</p></div>${liveLinks(L)}`;
+  if (L.status === 'no-feed-here') return `<div class="live-box"><b>We show live numbers in ${esc(s)} only for ${esc((L.countyNotCovered || []).join(', '))}.</b><p>${esc(L.stateFeedNote || '')} For your area, please use the official websites below.</p></div>${liveLinks(L)}`;
+  if (L.status === 'before') {
+    const ms = Date.parse(L.pollsCloseUTC) - Date.now();
+    return `<div class="live-box lr-before"><b>Results start after polls close at ${esc(L.pollsCloseText)} in ${esc(s)}</b> on Tuesday, November 3, 2026.
+    <p class="lr-count" id="lr-count" aria-live="off">That is in about <span>${esc(untilText(ms))}</span>.</p><p>No numbers are shown before then, because there are none yet. This page will start showing results by itself after polls close.</p></div>${plain}${liveLinks(L)}`;
+  }
+  let h = '';
+  if (L.testMode) h += `<div class="lr-test" role="note"><b>TEST — PAST ELECTION DATA. NOT 2026 RESULTS.</b><p>${esc(L.testLabel || '')}. This is a test page for our team. It only works on a test computer and is never shown on the real site.</p></div>`;
+  for (const f of L.feeds || []) {
+    if (f.error) h += `<div class="notice"><p>${esc(f.message)} ${link(f.sourceUrl, f.sourceLabel)}</p></div>`;
+    if (f.hidden) h += `<div class="notice"><p>${esc(f.hidden)} ${link(f.sourceUrl, f.sourceLabel)}</p></div>`;
+  }
+  if (L.status === 'waiting') h += `<div class="live-box"><b>Polls are closed. No votes have been posted yet.</b><p>The first numbers usually appear within an hour or two. This page checks again every minute.</p></div>`;
+  h += plain;
+  const sec = L.sections || {};
+  for (const [k, t] of LIVE_SECT) {
+    const list = sec[k] || [];
+    h += `<h3 class="lr-sect">${t}</h3>${list.length ? list.map((c) => liveRaceHTML(c, L)).join('') : `<p class="note">No ${t.toLowerCase()} contests for your area in the official feed${k === 'city' ? '. City contests may be listed under “Other contests” below' : ''}.</p>`}`;
+  }
+  const other = sec.other || [];
+  if (other.length) h += `<details class="more" data-k="other"><summary>Other contests in the official feed (${other.length}) — these may not be on your ballot</summary>${other.map((c) => liveRaceHTML(c, L)).join('')}</details>`;
+  return h + `<h3 class="lr-sect">Official websites</h3>${liveLinks(L)}`;
+}
 function livePanel(r) {
-  const L = r.live, d = daysLeft();
   return `<section class="panel live" id="live" aria-labelledby="live-h"><h2 id="live-h">${STAR(30)} 2026 results — ${esc(r.state.name)}</h2>
-  <div class="live-box"><b>The 2026 results will be posted after the polls close on Nov. 3, 2026.</b>
-  <p>${esc(L.pollsClose)} ${d > 0 ? `That is ${d} day${d === 1 ? '' : 's'} from today.` : d === 0 ? 'That is today.' : ''}</p></div>
-  <p>${esc(L.explain)}</p>
-  <ul class="officials">${L.results ? `<li>${link(L.results, r.state.name + '’s official election-results website')}<br><span class="note">This is the state’s own results site. It opened when we checked on ${esc(fmtDate(L.checkedOn + 'T12:00:00'))}. It usually shows results only on and after Election Night.</span></li>` : `<li><span class="note">We could not confirm a ${esc(r.state.name)} results website yet. The state election office will post results here:</span></li>`}
-  ${L.office ? `<li>${link(L.office, r.state.name + ' election office')}${L.note ? `<br><span class="note">${esc(L.note)}</span>` : ''}</li>` : ''}
-  <li>${link('https://www.usa.gov/state-election-office', 'USA.gov: find any state’s election office')}</li></ul>
-  <p class="src">Source: official state election websites, links checked ${esc(fmtDate(L.checkedOn + 'T12:00:00'))}. Civic Compass does not use guesses from news groups.</p></section>`;
+  <div class="lr-bar-top no-print" id="lr-tools"><span id="lr-status" role="status" aria-live="polite">Loading the latest numbers…</span><button class="btn small" type="button" id="lr-refresh">Refresh now</button></div>
+  <div id="lr-body"><p class="note">Loading…</p></div></section>`;
+}
+function startLive(qs) {
+  stopLive();
+  const body = $('#lr-body'), st = $('#lr-status'), btn = $('#lr-refresh');
+  if (!body) return;
+  let last = null, busy = false;
+  async function load(manual) {
+    if (busy) return; busy = true;
+    st.innerHTML = '<span class="lr-spin" aria-hidden="true"></span> Updating…'; btn.disabled = true;
+    try {
+      const L = await api('/api/live?' + qs);
+      const open = [...body.querySelectorAll('details[open]')].map((d) => d.dataset.k);
+      const y = window.scrollY;
+      body.innerHTML = liveBody(L);
+      open.forEach((k) => { const d = body.querySelector(`details[data-k="${k}"]`); if (d) d.open = true; });
+      if (!manual) window.scrollTo(0, y);
+      last = L;
+      const t = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+      st.textContent = L.status === 'live' || L.status === 'waiting' ? `Checked at ${t}. Checks again every minute.` : L.status === 'before' ? 'Waiting for polls to close.' : `Checked at ${t}.`;
+      if (manual) announce('Results updated.');
+    } catch (e) { st.textContent = 'Could not update just now. We will try again in a minute.'; }
+    finally { busy = false; btn.disabled = false; }
+  }
+  btn.addEventListener('click', () => load(true));
+  load(false);
+  liveTimers.push(setInterval(() => {
+    if (!document.body.contains(body)) return stopLive();
+    if (!last || last.status === 'no-feed' || last.status === 'no-feed-here') return;
+    if (last.status === 'before') {
+      const ms = Date.parse(last.pollsCloseUTC) - Date.now(); const c = $('#lr-count span'); if (c) c.textContent = untilText(ms);
+      if (ms <= 0) load(false); return;
+    }
+    if (!document.hidden) load(false);
+  }, 60000));
+}
+function electionNightBanner() {
+  const now = new Date(), from = new Date('2026-11-03T00:00:00'), to = new Date('2026-11-18T00:00:00');
+  if (now < from || now >= to) return '';
+  const saved = store.get('cc-last') || '';
+  const href = saved ? '#/results?q=' + encodeURIComponent(saved) : '#/results';
+  const night = now < new Date('2026-11-04T12:00:00');
+  return `<section class="wrap" aria-label="Election results"><a class="en-banner" href="${esc(href)}"><span class="en-dot" aria-hidden="true"></span><span><b>${night ? 'Election night: see results as they come in' : 'Votes are still being counted'}</b><br>Unofficial numbers from official election websites${saved ? ' for ' + esc(saved) : ''}. Early numbers change.</span><span class="btn small">See results <span aria-hidden="true">›</span></span></a></section>`;
 }
 async function resultsView(params) {
-  setTitle('Past results');
+  setTitle('Results');
   const q = (params.get('q') || '').trim(), st = (params.get('state') || '').toUpperCase();
   const saved = q || store.get('cc-last') || '';
-  const intro = `${backBtn('#/', 'Back to home')}<div class="where results-hero"><span class="eyebrow">${STAR(18)} Past results</span><h1>How past elections turned out</h1><p class="lead">See results for your area from 2024 and 2022. See where the 2026 results will be posted. Every number shows its source and date. We never guess who will win or tell you who to pick.</p></div>`;
+  const intro = `${backBtn('#/', 'Back to home')}<div class="where results-hero"><span class="eyebrow">${STAR(18)} Results</span><h1>Election results</h1><p class="lead">See 2026 results as they come in on election night, and results for your area from 2024 and 2022. Every number shows its source and date. We never guess who will win or tell you who to pick.</p></div>`;
   if (!q && !st) {
     main.innerHTML = `<div class="wrap">${intro}${lookupForms(saved, 'UT')}
-    <section class="panel live"><h2>${STAR(30)} 2026 results</h2><div class="live-box"><b>The 2026 results will be posted after the polls close on Nov. 3, 2026.</b><p>Pick your state or type your ZIP code above to see your state’s official results website.</p></div></section>
+    <section class="panel live"><h2>${STAR(30)} 2026 results</h2><div class="live-box"><b>Live 2026 results start after polls close on Tuesday, Nov. 3, 2026.</b><p>Type your ZIP code or pick your state above. We show unofficial numbers from official election websites where we can, and links to them everywhere.</p></div></section>
     <div class="prose"><h2>What you will find here</h2><ul><li><b>Past results</b> from the November 2024 and 2022 elections: names, party, number of votes, who got the most votes, and how many people voted (when the state reports it).</li><li><b>Your county and U.S. House district</b>, when you type a ZIP code or city.</li><li><b>How close</b> past races were, and how people on your 2026 ballot did when they ran before.</li><li><b>Official links</b> to your state’s results website for November 3, 2026.</li></ul><p class="src">Source: ${link('https://electionlab.mit.edu/data', 'MIT Election Data + Science Lab')} official election results (public domain). Some states have less data. When that is true, we say so.</p></div></div>`;
     footer('Past results are saved copies of official results. Each card shows its date.'); bindLookup(); focusTop(); return;
   }
@@ -554,7 +649,7 @@ async function resultsView(params) {
   const facts = hasLookup ? [r.location.county && r.location.county.name, r.location.cd && r.location.cd.label].filter(Boolean) : [];
   main.innerHTML = `<div class="wrap">
   ${backBtn(q ? '#/ballot?q=' + encodeURIComponent(q) : '#/', q ? 'Back to my ballot' : 'Back to home')}
-  <div class="where results-hero"><span class="eyebrow">${STAR(18)} Past results</span><h1>${esc(hasLookup ? r.location.label : r.state.name)}${hasLookup ? '' : ''}</h1>
+  <div class="where results-hero"><span class="eyebrow">${STAR(18)} Results</span><h1>${esc(hasLookup ? r.location.label : r.state.name)}${hasLookup ? '' : ''}</h1>
     <div class="facts"><span class="fact">${esc(r.state.name)}</span>${facts.map((f) => `<span class="fact">${esc(f)}</span>`).join('')}</div>
     <div class="actions no-print"><a class="btn ghost small" href="#/results">Change place</a>${q ? `<a class="btn ghost small" href="#/ballot?q=${encodeURIComponent(q)}">See my 2026 ballot</a>` : ''}<button class="btn ghost small" type="button" id="print">Print this page</button></div></div>
   <nav class="jump jump5" aria-label="Jump to a section"><a href="#s-live" data-jump="live">2026<small>results</small></a><a href="#s-y2024" data-jump="y2024">2024<small>past results</small></a><a href="#s-y2022" data-jump="y2022">2022<small>past results</small></a><a href="#s-past" data-jump="past">People<small>on my ballot</small></a></nav>
@@ -568,6 +663,7 @@ async function resultsView(params) {
   ${lookupForms(q || saved, r.state.abbr)}</div>`;
   footer('Past results are saved copies of official results (from ' + fmtDate((r.snapshot || '') + 'T12:00:00') + '). Result links checked ' + fmtDate(r.live.checkedOn + 'T12:00:00') + '.');
   $('#print').addEventListener('click', () => window.print());
+  startLive((q ? 'q=' + encodeURIComponent(q) : 'state=' + encodeURIComponent(st)) + (params.get('test') === 'past' ? '&test=past' : ''));
   document.querySelectorAll('[data-jump]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); const t = document.getElementById(a.dataset.jump); if (!t) return; t.scrollIntoView({ behavior: 'smooth' }); t.setAttribute('tabindex', '-1'); t.focus({ preventScroll: true }); }));
   bindLookup(); focusTop();
 }
@@ -675,6 +771,7 @@ function setTab(path) {
   document.querySelectorAll('.tabs a').forEach((a) => { if (a.dataset.tab === t) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
 }
 function route() {
+  stopLive();
   const h = location.hash || '#/';
   const [path, qs] = h.slice(1).split('?');
   const params = new URLSearchParams(qs || '');

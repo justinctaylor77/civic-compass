@@ -215,7 +215,7 @@
    "office": "https://sos.wv.gov/elections/"
   },
   "WY": {
-   "results": null,
+   "results": "https://sos.wyo.gov/Elections/ElectionResults.aspx",
    "office": "https://sos.wyo.gov/Elections/"
   }
  }

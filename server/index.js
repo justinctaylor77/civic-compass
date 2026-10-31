@@ -12,6 +12,7 @@ const { scrub } = require('./util');
 const { STATES } = require('./states');
 const results = require('./results');
 const electionday = require('./electionday');
+const live = require('./live');
 
 const PORT = process.env.PORT || 3000;
 const ELECTION = { date: '2026-11-03', label: 'Tuesday, November 3, 2026' };
@@ -58,6 +59,18 @@ app.get('/api/results', wrap(async (req, res) => {
   if (location) v.location = { label: [location.cityName, location.state.abbr].filter(Boolean).join(', '), county: location.county, cd: location.cd, input: location.input };
   res.json(v);
 }));
+
+// v8 Live Results. ?q=<zip/city/address> or ?state=UT. Upstream feeds are polled once per LIVE_POLL_SECONDS into a shared cache.
+// &test=past works only when the server runs with LIVE_TEST_MODE=1 (never set on the live site).
+app.get('/api/live', wrap(async (req, res) => {
+  const q = String(req.query.q || '').trim();
+  let loc = null, state = req.query.state;
+  if (q) { loc = await resolve(q); state = loc.state.abbr; }
+  const v = await live.view({ state, loc, test: req.query.test === 'past' });
+  if (loc) v.location = { label: [loc.cityName, loc.state.abbr].filter(Boolean).join(', '), county: loc.county, cd: loc.cd };
+  res.json(v);
+}));
+app.get('/api/live/status', wrap(async (req, res) => res.json(await live.status())));
 
 const parseDistrict = (office) => { const m = String(office).match(/District (\d+)$/); return m ? m[1].padStart(2, '0') : null; };
 app.get('/api/candidate', wrap(async (req, res) => {

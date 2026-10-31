@@ -1,0 +1,60 @@
+{
+  "checkedOn": "2026-10-31",
+  "note": "Official, free, machine-readable election-night feeds. Feed IDs here are defaults; every one can be overridden with an env var (see HANDOFF.md, 'Election-night runbook'). Civic Compass polls each feed at most once every LIVE_POLL_SECONDS (default 180) into one shared server cache, and only after that state's polls close.",
+  "states": {
+    "UT": {
+      "pollsCloseUTC": "2026-11-04T03:00:00Z",
+      "pollsCloseLocal": "8:00 p.m.",
+      "timeZone": "America/Denver",
+      "countNote": "Utah votes mostly by mail. Counties keep counting mail ballots, and fixing signature problems, for days after Election Day, so the numbers keep changing. Counties make results official about two weeks later.",
+      "feeds": [
+        {
+          "id": "ut-state",
+          "adapter": "utah-ev",
+          "scope": "state",
+          "label": "Utah Lieutenant Governor's Office \u2014 Election Results",
+          "publicUrl": "https://electionresults.utah.gov/results/public/Utah",
+          "api": "https://electionresults.utah.gov/results/public/api",
+          "jurisdiction": "Utah",
+          "electionId": "General11032026",
+          "electionDate": "2026-11-03",
+          "env": "LIVE_UT_ELECTION_ID",
+          "testElectionId": "general11052024",
+          "testLabel": "Utah 2024 general election (Nov 5, 2024)"
+        }
+      ]
+    },
+    "OH": {
+      "pollsCloseUTC": "2026-11-04T00:30:00Z",
+      "pollsCloseLocal": "7:30 p.m.",
+      "timeZone": "America/New_York",
+      "countNote": "Ohio counts early, mailed and Election Day ballots on election night. Provisional ballots are checked in the days after. County boards make results official in the weeks after Election Day.",
+      "stateFeedNote": "The Ohio Secretary of State's results site blocks automated checks from our server, so we show only Franklin County's official feed and link to the state's site for everything else.",
+      "feeds": [
+        {
+          "id": "oh-franklin",
+          "adapter": "hart-liveresults",
+          "scope": "county",
+          "countyFips": "39049",
+          "countyName": "Franklin County",
+          "label": "Franklin County Board of Elections \u2014 Live Results",
+          "publicUrl": "https://vote.franklincountyohio.gov/elections",
+          "base": "https://liveresults.franklincountyohio.gov/enr/franklinohenr",
+          "electionId": "4",
+          "electionMatch": "November 3rd 2026",
+          "env": "LIVE_OH_FRANKLIN_ELECTION_ID",
+          "testElectionId": "3",
+          "testLabel": "Franklin County, Ohio \u2014 June 23, 2026 City of Whitehall special election"
+        }
+      ]
+    },
+    "WY": {
+      "pollsCloseUTC": "2026-11-04T02:00:00Z",
+      "pollsCloseLocal": "7:00 p.m.",
+      "timeZone": "America/Denver",
+      "countNote": "Wyoming counties post their own counts on election night. Results become official after the county and state canvass.",
+      "noFeedNote": "Wyoming's Secretary of State posts results as documents (PDF files), not as a live data feed we can read safely, so we cannot show the numbers here. Please use the official link below.",
+      "feeds": []
+    }
+  }
+}
