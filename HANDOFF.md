@@ -36,7 +36,7 @@ City and county races are thin (Ballotpedia only has a featured county per state
 - Gaps: no address -> council/school-district resolver; no roll-call vote history (needs a congress.gov key or Vote Smart); results county drill-down only via ZIP/city/address lookup; Wyoming city offices not claimed; MEDSL UT 2022 statewide is thin; Slco feed is undocumented.
 - Deployed: merged to main and live via Render trigger_deploy (`/sw.js` showed cc-v6).
 
-## v7 (approved by Justin 2026-10-27; fast-forward merged to main as 580a16e; deployed via manual Render trigger_deploy, dep-dbgasmd9fdbs73d9fs30; live)
+## v7 (approved by Justin 2026-10-27; fast-forward merged to main as 580a16e; deployed via manual Render trigger_deploy, dep-dbgasmd9fdbs73d9fs30; live until superseded by v8 on 2026-10-31)
 Goal: make the app easy for an older first-time phone user (Justin's mother-in-law) researching every candidate on her ballot. v7 is live at civic-compass.onrender.com (`/sw.js` shows cc-v7).
 - **Text size + contrast**: header bar on every page with Text size A / A+ / A++ and a High contrast toggle. Stored on this device only (`localStorage`: `cc-size` '1'|'2'|'3', `cc-contrast` '1'|'0'). Default is already large (112.5% root); A+ = x1.2, A++ = x1.45 via `--fs`. `html[data-size]` / `html[data-contrast="high"]` in styles.css (v7 block at the end).
 - **Plain language** (about grade 4-7 by `scripts/readability-v7.js`; Ballotpedia bio text is quoted, not rewritten). Glossary tooltips (`.term` + `.tip` button, tap or Enter, Esc closes) for retention, at-large, special election, etc. Server notes in ballot.js / county.js / results.js / geo.js reworded. Still nonpartisan and sourced.
@@ -49,7 +49,7 @@ Goal: make the app easy for an older first-time phone user (Justin's mother-in-l
 - **Gaps**: no verified state-specific deep links for hours / ID / deadlines; Ballotpedia bios cannot be simplified; ballot questions and judges can't be marked; no address-level council/school-board lookup (as v6); election-day countdown/date renders in the viewer's browser time zone; screen reader pass was automated (axe + ARIA checks), not a real VoiceOver/TalkBack session; one transient slow first load of the 84601 ballot seen once in testing (API latency).
 - **Deploy**: done 2026-10-27 (Justin approved): design/v7 fast-forwarded into main, pushed, manual Render trigger_deploy (auto-deploy stays OFF), verified `/sw.js` shows cc-v7.
 
-## v8: Live Results (branch design/v8, NOT deployed; waiting for Justin's approval)
+## v8: Live Results (approved by Justin 2026-10-31; fast-forward merged to main as 94da247; deployed via manual Render trigger_deploy, dep-dbj5cl0ae00c73d8v9c0; live)
 - The Results tab now has a live 2026 panel in place of the "posted after polls close" box. `GET /api/live?q=<zip|city|address>` (or `?state=UT`) returns the user's contests grouped Federal / State / County / City, plus "Other contests in the official feed (may not be on your ballot)". It also exposes `GET /api/live/status`, which shows which election ID each feed is pointed at and what the official index lists.
 - The home page shows an election-night banner from Nov 3 to Nov 17 that links to Results. The tab is renamed "Results". Cache version is cc-v8 and assets use ?v=8.
 - Rules in the code (server/live.js):
